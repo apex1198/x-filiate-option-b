@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X-Filiate — Option B Gaming Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #181818;
+      --muted: #686868;
+      --line: #c9c9c9;
+      --soft: #f3f3f3;
+      --paper: #ffffff;
+      --dark: #252525;
+      --max: 1240px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 64px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 20px; font-size: clamp(46px, 5vw, 72px); line-height: 1.02; letter-spacing: -.045em; }
+    h2 { margin-bottom: 16px; font-size: 38px; line-height: 1.12; letter-spacing: -.025em; }
+    h3 { line-height: 1.25; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .btn.primary { color: #fff; background: var(--ink); }
+    .btn.small { min-height: 38px; padding: 0 17px; font-size: 13px; }
+    .header {
+      position: relative;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+    }
+    .header-inner { min-height: 78px; display: flex; align-items: center; gap: 34px; }
+    .logo {
+      width: 154px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--ink);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    nav { display: flex; gap: 30px; margin-left: 18px; font-weight: 600; }
+    .auth { display: flex; gap: 10px; margin-left: auto; }
+    .hero { border-bottom: 1px solid var(--line); background: #fafafa; }
+    .hero-grid { min-height: 600px; display: grid; grid-template-columns: 1.2fr .8fr; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 74px 72px 74px 0; }
+    .hero-copy .lead { max-width: 650px; margin-bottom: 30px; color: #555; font-size: 19px; }
+    .hero-actions { display: flex; align-items: center; gap: 22px; }
+    .micro-note { color: var(--muted); font-size: 13px; }
+    .hero-side { display: grid; grid-template-rows: 1fr auto; border-left: 1px solid var(--line); }
+    .hero-proof {
+      min-height: 316px;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: repeating-linear-gradient(-45deg, #f1f1f1, #f1f1f1 12px, #f7f7f7 12px, #f7f7f7 24px);
+    }
+    .proof-label { width: fit-content; padding: 8px 12px; border: 1px solid var(--ink); background: #fff; font-size: 12px; font-weight: 700; }
+    .proof-card { margin-top: 14px; padding: 22px; border: 1px solid var(--ink); background: #fff; }
+    .proof-card strong { display: block; margin-bottom: 6px; font-size: 25px; }
+    .usp-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+    .usp { min-height: 106px; padding: 20px; display: flex; gap: 12px; align-items: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700; }
+    .usp:nth-child(even) { border-right: 0; }
+    .usp:nth-last-child(-n+2) { border-bottom: 0; }
+    .icon { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border: 1px solid #777; border-radius: 50%; color: #666; font-size: 9px; font-weight: 700; }
+    section { padding: 92px 0; }
+    .metrics { padding: 40px 0 0; background: #fff; }
+    .metrics-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1.25fr; border: 1px solid var(--ink); }
+    .metric { min-height: 170px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--ink); background: #fff; }
+    .metric:last-child { border-right: 0; }
+    .metric:nth-child(1), .metric:nth-child(4) { background: var(--soft); }
+    .metric strong { display: block; font-size: 43px; line-height: 1; letter-spacing: -.04em; }
+    .metric span { max-width: 175px; color: #505050; font-weight: 700; }
+    .ecosystem { padding-top: 70px; }
+    .eco-shell { border: 1px solid var(--ink); }
+    .eco-head { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink); }
+    .eco-head > div { padding: 52px; }
+    .eco-head > div:first-child { border-right: 1px solid var(--ink); background: var(--dark); color: #fff; }
+    .eco-head .intro { color: #d4d4d4; font-size: 18px; }
+    .eco-kicker { font-family: Georgia, serif; font-size: 27px; line-height: 1.35; }
+    .eco-list { display: grid; grid-template-columns: 1fr 1fr; }
+    .eco-item { min-height: 160px; padding: 28px 34px; display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .eco-item:nth-child(even) { border-right: 0; }
+    .eco-item:nth-last-child(-n+2) { border-bottom: 0; }
+    .step { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--ink); font-weight: 800; }
+    .eco-item strong { display: block; margin-bottom: 8px; font-size: 17px; }
+    .eco-item p { margin: 0; color: var(--muted); }
+    .eco-cta { padding: 28px 34px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ink); background: var(--soft); }
+    .eco-cta strong { font-size: 21px; }
+    .offers { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #f7f7f7; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 34px; }
+    .section-head p { max-width: 500px; margin-bottom: 0; color: var(--muted); }
+    .slider-tools { display: flex; gap: 8px; }
+    .arrow { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--ink); background: #fff; font-size: 20px; }
+    .campaigns { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .campaign { min-width: 0; border: 1px solid #a8a8a8; background: #fff; }
+    .campaign-image { aspect-ratio: 1.35; display: grid; place-items: center; border-bottom: 1px solid #aaa; background: repeating-linear-gradient(45deg, #eee, #eee 10px, #f7f7f7 10px, #f7f7f7 20px); color: #666; font-weight: 700; }
+    .campaign-body { padding: 18px; }
+    .brand { margin-bottom: 18px; font-size: 18px; font-weight: 800; }
+    .commission-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .commission { margin: 3px 0 18px; font-size: 24px; font-weight: 900; }
+    .campaign-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid #ddd; }
+    .tag { padding: 3px 8px; border: 1px solid #999; font-size: 11px; font-weight: 800; }
+    .detail { font-size: 13px; font-weight: 800; text-decoration: underline; }
+    .pagination { margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+    .page-dot { width: 34px; height: 4px; background: #bbb; }
+    .page-dot.active { background: var(--ink); }
+    .testimonials { background: #fff; }
+    .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .quote { min-height: 272px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--ink); }
+    .quote-mark { color: #aaa; font-family: Georgia, serif; font-size: 54px; line-height: .8; }
+    .quote p { font-family: Georgia, serif; font-size: 19px; line-height: 1.55; }
+    .user { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid #ddd; }
+    .avatar { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #888; border-radius: 50%; color: #777; font-size: 9px; }
+    .user small { display: block; color: var(--muted); }
+    .blog { border-top: 1px solid var(--line); background: var(--soft); }
+    .posts { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 22px; }
+    .post { border: 1px solid #aaa; background: #fff; }
+    .post-image { min-height: 170px; display: grid; place-items: center; border-bottom: 1px solid #aaa; background: #e9e9e9; color: #777; font-size: 12px; font-weight: 700; }
+    .post.featured .post-image { min-height: 260px; }
+    .post-body { padding: 24px; }
+    .post-body h3 { margin-bottom: 10px; font-size: 20px; }
+    .post.featured h3 { font-size: 26px; }
+    .post-body p { margin-bottom: 14px; color: var(--muted); }
+    .read { font-weight: 800; text-decoration: underline; }
+    footer { padding: 60px 0 28px; color: #fff; background: var(--dark); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 42px; padding-bottom: 48px; }
+    .footer-logo { width: 154px; height: 40px; margin-bottom: 20px; display: grid; place-items: center; border: 2px solid #fff; font-weight: 900; }
+    footer h3 { font-size: 14px; }
+    footer p, footer a { color: #cfcfcf; }
+    footer a { display: block; margin: 8px 0; }
+    .copyright { padding-top: 24px; border-top: 1px solid #555; color: #aaa; font-size: 12px; display: flex; justify-content: space-between; }
+    .chat {
+      position: fixed;
+      z-index: 20;
+      right: 24px;
+      bottom: 28px;
+      width: 198px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 5px 5px 0 rgba(0,0,0,.2);
+      font-weight: 800;
+    }
+    .chat .icon { border-color: var(--ink); color: var(--ink); }
+    @media (max-width: 980px) {
+      nav { display: none; }
+      .hero-grid, .eco-head { grid-template-columns: 1fr; }
+      .hero-side { border-left: 0; border-top: 1px solid var(--line); }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric { border-bottom: 1px solid var(--ink); }
+      .campaigns { grid-template-columns: repeat(2, 1fr); }
+      .quotes, .posts { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    /* OPTION B — TRUST FIRST / PREMIUM BRAND */
+    :root{--ink:#101827;--muted:#6f798a;--line:rgba(16,24,39,.12);--soft:#f4f2ec;--paper:#fbfaf7;--dark:#101927;--gold:#ffc400;--gold-2:#ff9d00;--max:1240px}
+    body{font-family:"Be Vietnam Pro",Arial,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(16,24,39,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,39,.03) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(#000,transparent 76%)}
+    .wrap{width:min(var(--max),calc(100% - 48px))}.eyebrow{color:#9b6800}.eyebrow:before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(255,196,0,.6)}
+    h1{font-size:clamp(48px,5.7vw,78px)}h2{font-size:clamp(30px,3.6vw,48px)}
+    section{padding:58px 0}.btn{border-radius:12px;transition:.25s}.btn.primary{border-color:transparent;color:#251800;background:linear-gradient(135deg,#ffe274,var(--gold) 52%,var(--gold-2));box-shadow:0 13px 34px rgba(255,172,0,.22)}.btn:hover{transform:translateY(-2px)}
+    .header{position:sticky;top:0;z-index:50;border:0;background:rgba(251,250,247,.88);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(16,24,39,.08)}.header-inner{min-height:76px}.logo,.footer-logo{width:190px;height:40px;padding:7px 10px;border:0;border-radius:9px;background:#fff}.logo img,.footer-logo img{display:block;width:100%;height:100%;object-fit:contain}.header nav{gap:25px;color:#596475;font-size:13px}.header nav a:hover{color:#986700}.auth .btn{min-height:40px}.menu-toggle{display:none;width:42px;height:42px;margin-left:auto;border:1px solid var(--line);border-radius:12px;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px}.menu-toggle span{width:19px;height:2px;border-radius:2px;background:#111827}
+    .mobile-menu{position:fixed;z-index:100;inset:0;padding:82px 14px 20px;display:flex;justify-content:center;align-items:flex-start;background:rgba(7,12,20,.55);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:.25s}.mobile-menu.open{opacity:1;visibility:visible}.mobile-panel{width:min(100%,430px);padding:18px;border-radius:24px;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.3)}.mobile-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:13px;border-bottom:1px solid var(--line)}.menu-close{width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:#f4f2ec;font-size:20px}.mobile-links{display:grid;gap:5px;padding:14px 0}.mobile-links a{padding:12px 14px;border-radius:11px;font-weight:600}.mobile-links a:hover{background:#fff7dc}.mobile-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding-top:13px;border-top:1px solid var(--line)}.menu-open{overflow:hidden}
+    .hero{padding:0;border:0;background:linear-gradient(135deg,#fbfaf7 0%,#f4efe1 100%)}.hero-grid{min-height:690px;grid-template-columns:1.08fr .92fr}.hero-copy{padding:86px 62px 86px 0}.hero-copy .lead{color:#5c6879;font-size:17px}.hero-actions{flex-wrap:wrap}.hero-side{border-color:rgba(16,24,39,.1)}.hero-proof{position:relative;min-height:450px;padding:26px;overflow:hidden;background:#0e1724 url('hero-x-realistic-v2.png') center/cover no-repeat}.hero-proof:before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,13,21,.08),#0d1622 96%)}.proof-label,.proof-card{position:relative;z-index:2}.proof-label{color:#ffe17c;border-color:rgba(255,208,58,.3);border-radius:999px;background:rgba(9,15,24,.68);backdrop-filter:blur(10px)}.proof-card{margin-top:auto;color:#fff;border-color:rgba(255,255,255,.1);border-radius:18px;background:rgba(10,16,25,.86);box-shadow:0 24px 60px rgba(0,0,0,.35)}.dash-mini{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:13px 0}.dash-mini span{padding:10px;border-radius:10px;background:rgba(255,255,255,.06);font-size:9px;color:#9ca8b8}.dash-mini b{display:block;color:#ffe17a;font-size:16px}.mini-bars{height:52px;display:flex;align-items:flex-end;gap:7px}.mini-bars i{flex:1;height:var(--h);border-radius:4px 4px 1px 1px;background:linear-gradient(#ffe070,#ff9d00)}
+    .usp-grid{border-color:rgba(16,24,39,.1);background:#fff}.usp{border-color:rgba(16,24,39,.1);font-size:11px}.icon{border-color:rgba(184,122,0,.24);color:#9b6800;background:#fff7dc}
+    .metrics{position:relative;padding:38px 0 0;background:transparent}.metrics:after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:50%;background:linear-gradient(135deg,#ff9d00,#ffc400 55%,#ffe17a)}.metrics-grid{overflow:hidden;border:0;border-radius:24px;background:rgba(255,255,255,.88);box-shadow:0 24px 65px rgba(16,24,39,.1)}.metric,.metric:nth-child(1),.metric:nth-child(4){min-height:150px;border-color:var(--line);background:transparent;text-align:center;align-items:center}.metric strong{color:#e99900}.metric span{color:#7b8493}
+    .audience{background:linear-gradient(135deg,#ff9d00,#ffc400 55%,#ffe17a)}.audience-head{text-align:center;max-width:760px;margin:0 auto 30px}.audience-head p{color:#5b420f}.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.audience-card{overflow:hidden;border:1px solid rgba(255,255,255,.62);border-radius:22px;background:#fff;box-shadow:0 20px 44px rgba(104,61,0,.12)}.audience-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.audience-copy{padding:20px}.audience-copy h3{margin-bottom:8px}.audience-copy p{margin:0;color:#687386;font-size:12px}
+    .ecosystem{padding-top:58px}.eco-shell{overflow:hidden;border:1px solid rgba(16,24,39,.1);border-radius:28px;background:#fff;box-shadow:0 25px 70px rgba(16,24,39,.08)}.eco-head{border-color:rgba(255,255,255,.08)}.eco-head>div{padding:46px}.eco-head>div:first-child{border-color:rgba(255,255,255,.08);background:#101927}.eco-head .intro{color:#b4bdca;font-size:15px}.eco-visual-b{position:relative;min-height:340px!important;padding:0!important;background:radial-gradient(circle at 50% 50%,rgba(255,196,0,.22),transparent 36%),#0b1320}.eco-orbit{position:absolute;left:50%;top:50%;width:230px;height:230px;transform:translate(-50%,-50%);border:1px dashed rgba(255,218,91,.3);border-radius:50%;animation:orbit 12s linear infinite}.eco-orbit:after{content:"";position:absolute;right:-8px;top:50%;width:16px;height:16px;border-radius:50%;background:#ffc400;box-shadow:0 0 24px #ffc400}.eco-core-b{position:absolute;left:50%;top:50%;width:118px;height:104px;transform:translate(-50%,-50%);padding:18px;border-radius:24px;background:#fff;box-shadow:0 0 55px rgba(255,196,0,.35)}.eco-core-b img{width:100%;height:100%;object-fit:contain}.eco-pill{position:absolute;padding:7px 10px;border:1px solid rgba(255,220,105,.18);border-radius:999px;background:rgba(13,21,32,.82);color:#e6ebf2;font-size:9px}.ep1{top:45px;left:28px}.ep2{top:64px;right:22px}.ep3{bottom:56px;left:22px}.ep4{bottom:39px;right:28px}@keyframes orbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    .eco-list{border-top:1px solid var(--line)}.eco-item{min-height:145px;border-color:var(--line)}.step{border:0;border-radius:12px;color:#5b3b00;background:linear-gradient(135deg,#ffe27b,#ffae00)}.eco-item p{font-size:13px}.eco-cta{border-color:var(--line);background:#f6f3eb}
+    .offers{border:0;background:radial-gradient(circle at 50% 45%,rgba(255,196,0,.09),transparent 40%),#f6f4ef}.slider-tools{align-items:center}.arrow{border-color:var(--line);border-radius:50%;background:#fff}.slider-pages{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;background:#fff}.page-btn{width:30px;height:30px;border:0;border-radius:50%;background:transparent;color:#7b8493;font:600 11px inherit}.page-btn.active{color:#241800;background:linear-gradient(135deg,#ffe27a,#ffad00)}.campaign-window{overflow:hidden}.campaign-track{display:flex;width:300%;transition:transform .5s ease}.campaign-page{width:33.333333%;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:2px}.campaign{border-color:rgba(16,24,39,.1);border-radius:20px;overflow:hidden;box-shadow:0 16px 38px rgba(16,24,39,.06)}.campaign-image{aspect-ratio:1.35;border:0;color:#fff;background:radial-gradient(circle at 50% 20%,#293343,#0b1320 68%)}.brand-logo{padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.05);font-size:20px;font-weight:800}.brand-logo em{color:#ffc400;font-style:normal}.campaign-meta{border-color:var(--line)}.commission{color:#a66c00}.offers-all,.blog-all{display:flex;justify-content:center;margin-top:28px}
+    .testimonials{background:linear-gradient(135deg,#ff9d00,#ffc400 52%,#ffe17a)}.testimonials .section-head p{color:#5d4312}.quote{border:1px solid rgba(255,255,255,.58);border-radius:22px;background:rgba(255,255,255,.84);box-shadow:0 20px 48px rgba(95,55,0,.12)}.quote-mark{color:#d48800}.quote p{font-family:inherit;font-size:15px}.user{border-color:rgba(16,24,39,.1)}
+    .blog{border:0;background:#fbfaf7}.posts{grid-template-columns:1.05fr 1.45fr;gap:16px}.post,.post.featured{overflow:hidden;border-color:var(--line);border-radius:22px;background:#fff;box-shadow:0 16px 40px rgba(16,24,39,.06)}.post-image{min-height:124px;border:0;background-size:cover;background-position:center}.post.featured .post-image{min-height:300px}.post-side-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.post-side-grid .post-body{padding:16px}.post-side-grid .post-body h3{font-size:13px}.post-side-grid .post-body p{font-size:10px}.post-body .commission-label{color:#a66b00}
+    .cta{padding:10px 0 60px;background:#fbfaf7}.cta-box{padding:62px 30px;text-align:center;border:1px solid rgba(255,211,65,.22);border-radius:28px;color:#fff;background:radial-gradient(circle at 50% 120%,rgba(255,196,0,.25),transparent 55%),#101927;box-shadow:0 30px 90px rgba(16,24,39,.25)}.cta-box p{max-width:620px;margin:0 auto 25px;color:#aab5c5}
+    footer{background:#0a1019}.footer-logo{margin-bottom:18px}.chat{border:1px solid rgba(255,208,54,.32);border-radius:999px;color:#fff;background:rgba(12,19,29,.92);box-shadow:0 16px 44px rgba(0,0,0,.35)}.chat .icon{border-color:rgba(255,208,54,.35);color:#ffc400;background:rgba(255,196,0,.08)}
+    @media(max-width:980px){.header nav{display:none}.menu-toggle{display:flex}.auth{display:none}.hero-grid,.eco-head{grid-template-columns:1fr}.hero-side{border-left:0}.metrics-grid{grid-template-columns:1fr 1fr}.audience-grid{grid-template-columns:1fr 1fr}.campaign-page{grid-template-columns:repeat(2,1fr)}.campaign-page .campaign:nth-child(5){display:none}.quotes{grid-template-columns:1fr}.posts{grid-template-columns:1fr}.post-side-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}section{padding:52px 0}.header-inner{min-height:62px}.logo{width:158px;height:34px}.hero-grid{min-height:0}.hero-copy{padding:70px 0 48px}.hero-copy .lead{font-size:14px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-side{border-top:1px solid var(--line)}.hero-proof{min-height:420px}.proof-card{padding:16px}.dash-mini{grid-template-columns:1fr 1fr}.dash-mini span:first-child{grid-column:span 2}.usp{min-height:86px;padding:13px;font-size:10px}.metrics{padding-top:26px}.metric{min-height:112px;padding:18px}.metric strong{font-size:28px}.metric span{font-size:11px}.audience-grid{grid-template-columns:1fr;gap:12px}.audience-card{display:flex;min-height:126px;border-radius:18px}.audience-card img{flex:0 0 39%;width:39%;aspect-ratio:auto;object-fit:cover}.audience-copy{display:flex;flex-direction:column;justify-content:center;padding:16px}.audience-copy h3{font-size:15px;margin-bottom:6px}.audience-copy p{font-size:10px}.eco-head>div{padding:30px 22px}.eco-visual-b{min-height:320px!important}.eco-list{grid-template-columns:1fr}.eco-item{border-right:0;min-height:0}.eco-item:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.eco-item:last-child{border-bottom:0}.eco-cta{align-items:flex-start;flex-direction:column;gap:16px}.section-head{align-items:flex-start;flex-direction:column;gap:16px}.campaign-page{gap:10px}.campaign-page .campaign:nth-child(5){display:none}.campaign-body{padding:12px}.campaign-image{min-height:76px}.brand-logo{font-size:14px}.brand{font-size:12px;margin-bottom:10px}.commission{font-size:16px}.campaign-meta{font-size:10px}.offers-all .btn,.blog-all .btn{width:100%}.post-side-grid{grid-template-columns:1fr}.post.featured .post-image{min-height:210px}.post-side-grid .post-image{min-height:170px}.cta-box{padding:50px 20px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:span 2}.chat{right:12px;bottom:12px;width:48px;height:48px;padding:7px}.chat>span:last-child{display:none}.copyright{display:block}.copyright span{display:block;margin-top:7px}}
+    .hero-proof canvas{position:absolute;z-index:1;inset:0;width:100%;height:100%;pointer-events:none}.eco-visual-b{transform-style:preserve-3d;transition:transform .35s ease}
+    /* PUBZI-INSPIRED GAMING TECH DIRECTION — XFILIATE BRAND PALETTE */
+    :root{--ink:#f7f8fa;--muted:#a7aab0;--line:rgba(255,255,255,.11);--soft:#1c1d20;--paper:#0b0e13;--dark:#07090d;--gold:#ffc400;--gold-2:#ff9d00}
+    body{color:#f7f8fa;background:#0b0e13}
+    body:before{opacity:.5;background-image:radial-gradient(rgba(255,196,0,.22) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(#000,transparent 80%)}
+    h1,h2,h3{font-weight:800;letter-spacing:-.055em}h2{text-transform:uppercase;line-height:1.02}.eyebrow{color:#ffc400;letter-spacing:.16em}
+    .header{background:rgba(6,8,12,.88);box-shadow:0 1px 0 rgba(255,255,255,.09)}.header nav{color:#c0c4cc}.header nav a:hover{color:#ffc400}
+    .auth .btn:not(.primary){color:#fff;border-color:rgba(255,255,255,.17)}
+    .btn{border-radius:999px}.btn.primary{color:#0b0e13;background:linear-gradient(120deg,#ffe35f,#ffc400 52%,#ff9d00);box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 16px 40px rgba(255,173,0,.2)}
+    .hero{position:relative;background:radial-gradient(circle at 73% 42%,rgba(255,196,0,.16),transparent 29%),#07090d}.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#ffc400,transparent)}
+    .hero-grid{min-height:820px;grid-template-columns:1.04fr .96fr}.hero-copy{padding:98px 52px 94px 0}.hero-copy h1{font-size:clamp(62px,7.2vw,104px);line-height:.9;text-transform:uppercase;letter-spacing:-.075em}.hero-copy .lead{max-width:600px;color:#a8adb7}.micro-note{color:#8d929d}
+    .hero-proof{min-height:620px;border-left:1px solid rgba(255,255,255,.1);background:#07090d url('hero-x-pubzi-style.png') center 52%/cover no-repeat}.hero-proof:before{background:linear-gradient(to bottom,rgba(7,9,13,.04) 30%,rgba(7,9,13,.25) 65%,#07090d 100%)}.proof-label{top:10px;color:#0b0e13;border:0;background:#ffc400}.proof-card{border-color:rgba(255,196,0,.22);border-radius:28px;background:rgba(10,13,18,.86);box-shadow:0 28px 70px rgba(0,0,0,.55)}
+    .usp-grid{border-color:rgba(255,255,255,.09);background:#0e1117}.usp{color:#f4f6f8;border-color:rgba(255,255,255,.09)}.icon{border-color:rgba(255,196,0,.38);color:#ffc400;background:transparent}
+    .metrics{background:#0b0e13}.metrics:after{background:linear-gradient(120deg,#ff9d00,#ffc400 60%,#ffe46d)}.metrics>.wrap>.eyebrow{color:#ffc400}.metrics-grid{border:1px solid rgba(255,255,255,.11);background:#15181e;box-shadow:0 34px 80px rgba(0,0,0,.38)}.metric,.metric:nth-child(1),.metric:nth-child(4){border-color:rgba(255,255,255,.09);background:#15181e}.metric strong{color:#ffc400;font-size:46px}.metric span{color:#a7abb4;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+    .audience{position:relative;border-radius:40px;background:linear-gradient(120deg,#ff9d00,#ffc400 58%,#ffe36b)}.audience:before{content:"XFILIATE";position:absolute;right:3%;top:1%;color:rgba(10,14,19,.07);font-size:13vw;font-weight:800;letter-spacing:-.08em}.audience-head{position:relative;color:#0b0e13}.audience-head .eyebrow{color:#2a1b00}.audience-head p{color:#4c3508}.audience-card{position:relative;border-color:rgba(6,9,13,.28);border-radius:28px;background:#0f1218;box-shadow:0 24px 55px rgba(67,39,0,.24)}.audience-copy h3{color:#fff;text-transform:uppercase}.audience-copy p{color:#aeb3bc}
+    .ecosystem{background:#0b0e13}.eco-shell{border-color:rgba(255,255,255,.1);border-radius:40px;background:#1c1d20;box-shadow:0 32px 90px rgba(0,0,0,.38)}.eco-head>div:first-child{background:#101319}.eco-head .intro{color:#aeb3bd}.eco-visual-b{background:radial-gradient(circle at 50% 50%,rgba(255,196,0,.24),transparent 35%),#0a0d12}.eco-pill{border-color:rgba(255,196,0,.25);background:#161a20}.eco-list{border-color:rgba(255,255,255,.09)}.eco-item{border-color:rgba(255,255,255,.09);background:#1c1d20}.eco-item p{color:#a7abb4}.step{color:#0a0d12}.eco-cta{border-color:rgba(255,255,255,.09);background:#12151b}
+    .offers{background:#0b0e13}.section-head p{color:#a8adb7}.arrow{color:#ffc400;border-color:rgba(255,196,0,.28);background:#11151b}.slider-pages{border-color:rgba(255,255,255,.1);background:#11151b}.page-btn{color:#9398a2}.page-btn.active{color:#080a0e;background:#ffc400}
+    .campaign{border-color:rgba(255,255,255,.1);border-radius:28px;background:#1c1d20;box-shadow:none}.campaign:hover{transform:translateY(-7px);border-color:rgba(255,196,0,.42)}.campaign-image{background:radial-gradient(circle at 50% 28%,#333740,#0d1016 68%)}.campaign-body{background:#1c1d20}.campaign-meta{border-color:rgba(255,255,255,.09)}.commission{color:#ffc400}.commission-label{color:#9297a1}.tag{color:#ffc400;border-color:rgba(255,196,0,.35)}.detail,.read{color:#fff}
+    .offers-all .btn,.blog-all .btn{color:#ffc400;border-color:rgba(255,196,0,.4);background:#11151b}
+    .testimonials{border-radius:40px;background:linear-gradient(120deg,#ff9d00,#ffc400 60%,#ffe36b)}.testimonials .section-head{color:#0b0e13}.testimonials .section-head .eyebrow{color:#2a1b00}.testimonials .section-head p{color:#493303}.quote{color:#fff;border-color:rgba(255,196,0,.22);border-radius:30px;background:#101319;box-shadow:0 25px 60px rgba(77,43,0,.22)}.quote-mark{color:#ffc400}.quote p{color:#e1e4e9}.user{border-color:rgba(255,255,255,.1)}.user small{color:#9fa4ad}
+    .blog{background:#0b0e13}.post,.post.featured{border-color:rgba(255,255,255,.1);border-radius:30px;background:#1c1d20;box-shadow:none}.post-body{background:#1c1d20}.post-body p{color:#a8adb6}.post-body .commission-label{color:#ffc400}
+    .cta{background:#0b0e13}.cta-box{position:relative;border:0;border-radius:40px;color:#0b0e13;background:linear-gradient(120deg,#ff9d00,#ffc400 60%,#ffe36b);overflow:hidden}.cta-box:after{content:"X";position:absolute;right:-1%;bottom:-65%;color:rgba(10,14,19,.08);font-size:310px;font-weight:800}.cta-box .eyebrow{color:#2b1c00}.cta-box p{position:relative;z-index:1;color:#4c3508}.cta-box h2,.cta-box a{position:relative;z-index:1}.cta-box .btn.primary{color:#fff;background:#0b0e13;box-shadow:none}
+    footer{background:#06080c}.chat{border-color:rgba(255,196,0,.38);background:#101319}.menu-toggle{border-color:rgba(255,255,255,.14);background:#11151b}.menu-toggle span{background:#ffc400}.mobile-menu{background:rgba(4,6,9,.75)}.mobile-panel{color:#fff;background:#11151b}.mobile-head,.mobile-actions{border-color:rgba(255,255,255,.1)}.menu-close{color:#fff;border-color:rgba(255,255,255,.12);background:#1c2027}.mobile-links a:hover{color:#ffc400;background:rgba(255,196,0,.08)}.mobile-actions .btn:not(.primary){color:#fff;border-color:rgba(255,255,255,.15)}
+    @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-proof{min-height:680px;border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
+    @media(max-width:680px){.hero-copy h1{font-size:53px}.hero-copy{padding-top:72px}.hero-proof{min-height:530px}.proof-card{border-radius:22px}.audience,.testimonials,.eco-shell,.cta-box{border-radius:28px}.metric strong{font-size:30px}.audience-card{border-radius:20px}.campaign,.post,.post.featured{border-radius:20px}}
+    /* FULL MOTION SYSTEM */
+    .preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#07090d;transition:opacity .65s ease,visibility .65s ease}.preloader.done{opacity:0;visibility:hidden}.preloader-inner{text-align:center}.loader-ring{width:82px;height:82px;margin:auto;border:2px solid rgba(255,196,0,.12);border-top-color:#ffc400;border-radius:50%;animation:spin 1s linear infinite}.loader-word{margin-top:20px;color:#ffc400;font-size:22px;font-weight:800;letter-spacing:.35em}.loader-sub{margin-top:6px;color:#737985;font-size:9px;letter-spacing:.45em}@keyframes spin{to{transform:rotate(360deg)}}
+    .cursor-dot,.cursor-ring{position:fixed;z-index:9998;left:0;top:0;border-radius:50%;pointer-events:none;opacity:0;transform:translate(-50%,-50%)}.cursor-dot{width:7px;height:7px;background:#ffc400}.cursor-ring{width:38px;height:38px;border:1px solid rgba(255,196,0,.7);transition:width .25s,height .25s,background .25s,border-color .25s}.cursor-ring.active{width:58px;height:58px;border-color:rgba(255,196,0,.25);background:rgba(255,196,0,.08)}
+    .back-top{position:fixed;z-index:70;right:22px;bottom:92px;width:48px;height:48px;border:1px solid rgba(255,196,0,.35);border-radius:0;color:#0b0e13;background:#ffc400;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(18px);transition:.35s}.back-top.show{opacity:1;visibility:visible;transform:none}
+    .marquee-band{position:relative;z-index:4;overflow:hidden;padding:18px 0;border-top:1px solid rgba(255,196,0,.16);border-bottom:1px solid rgba(255,196,0,.16);background:#0f1218;transform:rotate(-1.4deg);transform-origin:center}.marquee-track{display:flex;width:max-content;gap:30px;animation:marquee 24s linear infinite}.marquee-band.reverse{transform:rotate(1.2deg);background:#ffc400}.marquee-band.reverse .marquee-track{animation-direction:reverse;animation-duration:28s}.marquee-item{display:flex;align-items:center;gap:30px;white-space:nowrap;color:#fff;font-size:clamp(28px,4vw,56px);font-weight:800;letter-spacing:-.045em;text-transform:uppercase}.marquee-band.reverse .marquee-item{color:#0b0e13}.marquee-star{width:18px;height:18px;background:#ffc400;clip-path:polygon(50% 0,61% 36%,100% 50%,61% 64%,50% 100%,39% 64%,0 50%,39% 36%)}.marquee-band.reverse .marquee-star{background:#0b0e13}@keyframes marquee{to{transform:translateX(-50%)}}
+    .reveal{opacity:0;transform:translateY(54px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--delay,0ms)}.reveal.from-left{transform:translateX(-64px)}.reveal.from-right{transform:translateX(64px)}.reveal.in-view{opacity:1;transform:none}
+    .split-word{display:inline-block;opacity:0;transform:translateY(110%) rotate(3deg);transition:opacity .7s ease,transform .85s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i)*70ms + 180ms)}.hero.ready .split-word{opacity:1;transform:none}
+    .hero-copy:before{content:"";position:absolute;width:220px;height:220px;left:-140px;top:120px;border:1px solid rgba(255,196,0,.14);border-radius:50%;animation:orbitPulse 5s ease-in-out infinite}.hero-copy{position:relative}.hero-proof{will-change:background-position,transform;animation:floatHero 6s ease-in-out infinite}.hero-proof:after{content:"";position:absolute;z-index:1;width:160px;height:160px;right:-75px;top:90px;border:1px solid rgba(255,196,0,.28);border-radius:50%;box-shadow:0 0 60px rgba(255,196,0,.08);animation:orbitPulse 4s ease-in-out infinite reverse}@keyframes floatHero{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}@keyframes orbitPulse{0%,100%{transform:scale(.9);opacity:.45}50%{transform:scale(1.08);opacity:1}}
+    .hero-particle{position:absolute;z-index:3;width:var(--s);height:var(--s);left:var(--x);top:var(--y);border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff3a8,#ffc400 42%,#ff8a00 74%);box-shadow:0 0 22px rgba(255,196,0,.65);animation:particleFloat var(--d) ease-in-out infinite alternate;animation-delay:var(--l)}@keyframes particleFloat{to{transform:translate3d(var(--tx),var(--ty),0) scale(.72);opacity:.45}}
+    .audience-card,.campaign,.post,.quote,.eco-item{position:relative;transform-style:preserve-3d;will-change:transform;transition:transform .38s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s}.audience-card:after,.campaign:after,.post:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,196,0,.15),transparent 35%);opacity:0;transition:opacity .35s}.audience-card:hover:after,.campaign:hover:after,.post:hover:after{opacity:1}.audience-card img,.post-image{transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .8s}.audience-card:hover img,.post:hover .post-image{transform:scale(1.075);filter:saturate(1.16) contrast(1.08)}
+    .brand-logo{transition:transform .45s cubic-bezier(.2,.8,.2,1),text-shadow .4s}.campaign:hover .brand-logo{transform:scale(1.1) rotate(-2deg);text-shadow:0 0 28px rgba(255,196,0,.5)}
+    .eco-orbit{animation-duration:18s}.eco-core-b{animation:corePulse 3.8s ease-in-out infinite}@keyframes corePulse{50%{box-shadow:0 0 85px rgba(255,196,0,.55);transform:translate(-50%,-50%) scale(1.045)}}.eco-pill{animation:pillFloat 4s ease-in-out infinite}.ep2{animation-delay:-1s}.ep3{animation-delay:-2s}.ep4{animation-delay:-3s}@keyframes pillFloat{50%{transform:translateY(-8px)}}
+    .section-head h2,.audience-head h2,.cta-box h2{position:relative}.section-head h2:after,.audience-head h2:after{content:"";display:block;width:64px;height:4px;margin-top:18px;background:#ffc400;transform-origin:left;animation:linePulse 2.8s ease-in-out infinite}@keyframes linePulse{50%{width:112px}}
+    .btn,.arrow,.page-btn,.chat,.back-top{will-change:transform}.btn .arrow-char{display:inline-block;transition:transform .3s}.btn:hover .arrow-char{transform:translateX(5px)}
+    @media(pointer:coarse),(max-width:980px){.cursor-dot,.cursor-ring{display:none}.hero-proof{animation:none}.audience-card,.campaign,.post,.quote,.eco-item{transform:none!important}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal,.split-word{opacity:1!important;transform:none!important}.preloader{display:none}}
+    /* TYPOGRAPHY REFINEMENT */
+    @font-face{font-family:"SVN Monument Extended";src:url("SVN-MonumentExtended-Black.ttf") format("truetype");font-style:normal;font-weight:900;font-display:swap}
+    h1{font-family:"SVN Monument Extended","Be Vietnam Pro",Arial,sans-serif;font-weight:900;line-height:1.03;letter-spacing:-.025em}
+    .hero-copy h1{max-width:780px;font-size:clamp(46px,5.7vw,82px);line-height:1.03;letter-spacing:-.025em}
+    h2{font-size:clamp(28px,3.15vw,42px);line-height:1.14;letter-spacing:-.025em;margin-bottom:20px}
+    h3{line-height:1.34;letter-spacing:-.015em}
+    .section-head{gap:30px}.section-head>div{max-width:780px}.audience-head{max-width:830px}.cta-box h2{max-width:850px;margin-left:auto;margin-right:auto}
+    @media(max-width:680px){.hero-copy h1{font-size:40px;line-height:1.07;letter-spacing:-.018em}.hero-copy{padding-top:68px}h2{font-size:clamp(26px,8.2vw,34px);line-height:1.18;letter-spacing:-.018em}h3{line-height:1.4}}
+    /* TESTIMONIAL CENTERED LAYOUT */
+    .testimonials .section-head{display:block;max-width:790px;margin:0 auto 42px;text-align:center}.testimonials .section-head>div{max-width:none}.testimonials .section-head h2:after{margin-left:auto;margin-right:auto}.testimonials .section-head>p{max-width:610px;margin:0 auto;text-align:center}
+    .testimonials .quote{align-items:center;text-align:center}.testimonials .quote>div:first-child{text-align:center}.testimonials .quote-mark{text-align:center}.testimonials .quote p{max-width:330px;margin-left:auto;margin-right:auto;text-align:center}.testimonials .user{width:100%;justify-content:center;text-align:left}
+    .testimonials .avatar{width:68px;height:68px;flex:0 0 68px;overflow:hidden;border:2px solid rgba(255,196,0,.7);background:#11151b;box-shadow:0 0 0 5px rgba(255,196,0,.08),0 12px 28px rgba(0,0,0,.3)}.testimonials .avatar img{display:block;width:100%;height:100%;object-fit:cover}
+    @media(max-width:680px){.testimonials .section-head{margin-bottom:30px}.testimonials .quote p{max-width:none}.testimonials .avatar{width:58px;height:58px;flex-basis:58px}}
+    /* AUDIENCE SECTION SPACING & BOTTOM FLARES */
+    .audience{padding:30px 0;overflow:hidden;isolation:isolate}
+    .audience:before{z-index:0}
+    .audience:after{content:"";position:absolute;z-index:0;pointer-events:none;left:-4%;right:-4%;bottom:-28%;height:72%;opacity:.72;filter:blur(14px);background:radial-gradient(ellipse at 6% 100%,rgba(255,248,184,.86) 0%,rgba(255,226,80,.34) 27%,transparent 54%),radial-gradient(ellipse at 29% 112%,rgba(255,245,164,.72) 0%,rgba(255,203,0,.28) 25%,transparent 52%),radial-gradient(ellipse at 54% 106%,rgba(255,250,202,.82) 0%,rgba(255,220,52,.3) 29%,transparent 56%),radial-gradient(ellipse at 78% 112%,rgba(255,239,132,.7) 0%,rgba(255,184,0,.27) 27%,transparent 53%),radial-gradient(ellipse at 97% 101%,rgba(255,250,205,.82) 0%,rgba(255,214,38,.3) 28%,transparent 55%)}
+    .audience>.wrap{position:relative;z-index:2}
+    @media(max-width:680px){.audience{padding:30px 0}.audience:after{left:-35%;right:-35%;bottom:-15%;height:54%;opacity:.62}}
+    /* COMPLETE MONUMENT HEADING SCALE */
+    @font-face{font-family:"SVN Monument Extended";src:url("SVN-MonumentExtended-Medium.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
+    @font-face{font-family:"SVN Monument Extended";src:url("SVN-MonumentExtended-Bold.ttf") format("truetype");font-style:normal;font-weight:700;font-display:swap}
+    h1,h2,h3,h4,h5,h6{font-family:"SVN Monument Extended","Be Vietnam Pro",Arial,sans-serif;letter-spacing:-.012em;text-wrap:balance}
+    h1{font-size:clamp(42px,5vw,72px);font-weight:900;line-height:1.08}
+    .hero-copy h1{font-size:clamp(42px,5vw,72px);line-height:1.08;letter-spacing:-.016em}
+    h2{font-size:clamp(26px,2.8vw,36px);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+    h3{font-size:clamp(15px,1.35vw,18px);font-weight:700;line-height:1.38;letter-spacing:-.006em}
+    h4{font-size:15px;font-weight:700;line-height:1.4}h5{font-size:13px;font-weight:500;line-height:1.45}h6{font-size:12px;font-weight:500;line-height:1.45}
+    .post.featured h3{font-size:20px;line-height:1.36}.post-side-grid .post-body h3{font-size:13px;line-height:1.42}.audience-copy h3{font-size:14px;line-height:1.38}
+    @media(max-width:680px){h1,.hero-copy h1{font-size:35px;line-height:1.12;letter-spacing:-.01em}h2{font-size:clamp(24px,7.4vw,30px);line-height:1.24}h3{font-size:15px;line-height:1.42}.post.featured h3{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="preloader" id="preloader"><div class="preloader-inner"><div class="loader-ring"></div><div class="loader-word">XFILIATE</div><div class="loader-sub">LOADING EXPERIENCE</div></div></div>
+  <div class="cursor-dot" id="cursorDot"></div><div class="cursor-ring" id="cursorRing"></div>
+  <header class="header"><div class="wrap header-inner">
+    <a href="#" class="logo"><img src="x-filiate-logo.png" alt="X-Filiate"></a>
+    <nav aria-label="Điều hướng chính"><a href="#offers">Chương Trình</a><a href="#offers">Ưu Đãi</a><a href="#ecosystem">Về Chúng tôi</a><a href="#blog">Blog</a><a href="#ecosystem">Hệ Sinh Thái ▾</a></nav>
+    <div class="auth"><a class="btn small" href="#login">Đăng nhập</a><a class="btn small primary" href="#register">Đăng ký</a></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div></header>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-panel" role="dialog" aria-modal="true"><div class="mobile-head"><strong>Khám phá X-Filiate</strong><button class="menu-close" id="menuClose">×</button></div><div class="mobile-links"><a href="#offers">Chương Trình</a><a href="#offers">Ưu Đãi</a><a href="#ecosystem">Về Chúng tôi</a><a href="#blog">Blog</a><a href="#ecosystem">Hệ Sinh Thái</a></div><div class="mobile-actions"><a class="btn" href="#login">Đăng nhập</a><a class="btn primary" href="#register">Đăng ký</a></div></div></div>
+
+  <main>
+    <section class="hero"><div class="wrap hero-grid">
+      <div class="hero-copy"><p class="eyebrow">#1 Hệ thống Affiliate về iGaming &amp; Betting</p><h1>Kiếm tiền bền vững cùng XFILIATE</h1><p class="lead">Tiếp cận hàng trăm chiến dịch uy tín, tracking minh bạch và đội ngũ hỗ trợ sát sao. Bắt đầu đúng cách, tối ưu hiệu quả và phát triển nguồn thu lâu dài.</p><div class="hero-actions"><a class="btn primary" href="#register">Bắt đầu kiếm tiền →</a><span class="micro-note">Miễn phí đăng ký · Thiết lập nhanh</span></div></div>
+      <div class="hero-side"><div class="hero-proof"><canvas id="matrixCanvas"></canvas><span class="proof-label">XFILIATE DASHBOARD · LIVE</span><div class="proof-card"><strong>Hiệu suất chiến dịch</strong><div class="dash-mini"><span>Doanh thu 6 tháng<b>1.500 tỷ</b></span><span>Chuyển đổi<b>182.640</b></span><span>Tăng trưởng<b>+466,7%</b></span></div><div class="mini-bars"><i style="--h:18%"></i><i style="--h:27%"></i><i style="--h:37%"></i><i style="--h:47%"></i><i style="--h:65%"></i><i style="--h:100%"></i></div></div></div><div class="usp-grid"><div class="usp"><span class="icon">%</span>Hoa hồng cạnh tranh</div><div class="usp"><span class="icon">24H</span>Thanh toán nhanh chóng</div><div class="usp"><span class="icon">✓</span>Công cụ bảo mật hiện đại</div><div class="usp"><span class="icon">↗</span>Thanh toán linh hoạt</div></div></div>
+    </div></section>
+    <div class="marquee-band" aria-hidden="true"><div class="marquee-track"><div class="marquee-item">Affiliate Smarter <span class="marquee-star"></span> Grow Further <span class="marquee-star"></span> Real-time Tracking <span class="marquee-star"></span> Premium Offers <span class="marquee-star"></span></div><div class="marquee-item">Affiliate Smarter <span class="marquee-star"></span> Grow Further <span class="marquee-star"></span> Real-time Tracking <span class="marquee-star"></span> Premium Offers <span class="marquee-star"></span></div></div></div>
+
+    <section class="metrics"><div class="wrap"><p class="eyebrow">Nền tảng được tin chọn</p><div class="metrics-grid"><div class="metric"><strong>100+</strong><span>Nhà cái uy tín</span></div><div class="metric"><strong>500+</strong><span>Chiến dịch đang chạy</span></div><div class="metric"><strong>20K+</strong><span>Đối tác toàn quốc</span></div><div class="metric"><strong>1,500 tỷ</strong><span>Hoa hồng đã chi trả</span></div></div></div></section>
+
+    <section class="audience" id="audience"><div class="wrap"><div class="audience-head"><p class="eyebrow">Dành cho mọi mô hình</p><h2>X-Filiate phù hợp với cách bạn tăng trưởng</h2><p>Một nền tảng, đầy đủ công cụ cho publisher cá nhân, đội nhóm và hệ thống quy mô lớn.</p></div><div class="audience-grid">
+      <article class="audience-card"><img src="audience-seo.png" alt="SEO Publisher"><div class="audience-copy"><h3>SEO Publisher</h3><p>Hệ thống Landing Page tối ưu chuyển đổi.</p></div></article>
+      <article class="audience-card"><img src="audience-digital.png" alt="Digital Marketer"><div class="audience-copy"><h3>Digital Marketer</h3><p>Tracking Real-time chính xác. Minh bạch doanh thu.</p></div></article>
+      <article class="audience-card"><img src="audience-kol-koc.png" alt="KOL và KOC"><div class="audience-copy"><h3>KOL &amp; KOC</h3><p>Hoa hồng cạnh tranh nhất trong các ngành Affiliate.</p></div></article>
+      <article class="audience-card"><img src="audience-system-partner.png" alt="Đối tác hệ thống"><div class="audience-copy"><h3>Đối tác hệ thống</h3><p>API &amp; Postback linh hoạt cùng hệ sinh thái tăng trưởng.</p></div></article>
+    </div></div></section>
+
+    <section class="ecosystem" id="ecosystem"><div class="wrap"><div class="eco-shell"><div class="eco-head"><div><p class="eyebrow">Hệ sinh thái X-Filiate</p><h2>Không chỉ là một đường link affiliate.</h2><p class="intro">Đội ngũ hỗ trợ tận tâm đồng hành từ ngày đầu để bạn có thể kiếm tiền ngay khi bắt đầu, không cần kinh nghiệm.</p></div><div class="eco-visual-b"><div class="eco-orbit"></div><div class="eco-core-b"><img src="x-symbol.png" alt="X-Filiate"></div><span class="eco-pill ep1">500+ chiến dịch</span><span class="eco-pill ep2">Tracking 99,9%</span><span class="eco-pill ep3">Cộng đồng 20K+</span><span class="eco-pill ep4">Support 24/7</span></div></div><div class="eco-list"><div class="eco-item"><span class="step">01</span><div><strong>Thiết lập cá nhân hoá</strong><p>Hỗ trợ tài khoản và link affiliate cá nhân hoá.</p></div></div><div class="eco-item"><span class="step">02</span><div><strong>Cộng đồng thực chiến</strong><p>Chia sẻ kinh nghiệm thực tế mỗi ngày.</p></div></div><div class="eco-item"><span class="step">03</span><div><strong>Khởi động trong 60 phút</strong><p>Hiểu hệ thống qua lớp học khởi động nhanh.</p></div></div><div class="eco-item"><span class="step">04</span><div><strong>Công cụ tăng doanh thu</strong><p>Phát triển site, theo dõi và tối ưu hiệu suất.</p></div></div></div><div class="eco-cta" id="register"><strong>Nhanh chóng. Gọn gàng. Hiệu quả ngay từ bước đầu.</strong><a class="btn primary" href="#">Đăng ký ngay →</a></div></div></div></section>
+
+    <section class="offers" id="offers"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Chiến dịch đang dẫn đầu</p><h2>Top ưu đãi nổi bật</h2><p>So sánh hoa hồng và chọn chiến dịch phù hợp nhất.</p></div><div class="slider-tools"><button class="arrow" id="prev">‹</button><div class="slider-pages"><button class="page-btn active" data-page="0">1</button><button class="page-btn" data-page="1">2</button><button class="page-btn" data-page="2">3</button></div><button class="arrow" id="next">›</button></div></div><div class="campaign-window"><div class="campaign-track" id="campaignTrack">
+      <div class="campaign-page"><article class="campaign"><div class="campaign-image"><span class="brand-logo">SUN<em>WIN</em></span></div><div class="campaign-body"><div class="brand">Sunwin Premium</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">600.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo">HIT<em>CLUB</em></span></div><div class="campaign-body"><div class="brand">HitClub Partner</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">580.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>86</em>BET</span></div><div class="campaign-body"><div class="brand">86Bet Sports</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">720.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo">MAY<em>88</em></span></div><div class="campaign-body"><div class="brand">May88 VIP</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">650.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo">ZO<em>WIN</em></span></div><div class="campaign-body"><div class="brand">Zowin Affiliate</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">550.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article></div>
+      <div class="campaign-page"><article class="campaign"><div class="campaign-image"><span class="brand-logo">MAX<em>BET</em></span></div><div class="campaign-body"><div class="brand">MaxBet Pro</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">680.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo">ONE<em>88</em></span></div><div class="campaign-body"><div class="brand">One88</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">620.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>LUCKY</em>9</span></div><div class="campaign-body"><div class="brand">Lucky9</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">700.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo">V<em>SPORT</em></span></div><div class="campaign-body"><div class="brand">VSport</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">590.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>ROYAL</em>X</span></div><div class="campaign-body"><div class="brand">RoyalX</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">750.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article></div>
+      <div class="campaign-page"><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>W</em>88</span></div><div class="campaign-body"><div class="brand">W88 Partner</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">690.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>BK</em>8</span></div><div class="campaign-body"><div class="brand">BK8 Premium</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">640.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>KU</em>BET</span></div><div class="campaign-body"><div class="brand">KUBET Affiliate</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">710.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>M</em>88</span></div><div class="campaign-body"><div class="brand">M88 Sports</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">630.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article><article class="campaign"><div class="campaign-image"><span class="brand-logo"><em>789</em>BET</span></div><div class="campaign-body"><div class="brand">789Bet</div><div class="commission-label">Hoa hồng CPA</div><div class="commission">730.000đ</div><div class="campaign-meta"><span class="tag">CPA</span><a class="detail" href="#">Chi tiết →</a></div></div></article></div>
+    </div></div><div class="offers-all"><a class="btn" href="#">Xem tất cả chương trình →</a></div></div></section>
+
+    <section class="testimonials"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Đối tác nói gì</p><h2>Được kiểm chứng bởi cộng đồng</h2></div><p>Trải nghiệm thực tế từ publisher đang tăng trưởng cùng X-Filiate.</p></div><div class="quotes"><article class="quote"><div><div class="quote-mark">“</div><p>Dashboard trực quan, số liệu cập nhật nhanh. Doanh thu team mình tăng hơn 40% sau hai tháng.</p></div><div class="user"><span class="avatar"><img src="avatar-minh-nguyen.png" alt="Minh Nguyễn"></span><div><strong>Minh Nguyễn</strong><small>Performance Publisher</small></div></div></article><article class="quote"><div><div class="quote-mark">“</div><p>Support hiểu nghề và tư vấn chiến dịch rất sát với tệp traffic của mình.</p></div><div class="user"><span class="avatar"><img src="avatar-ha-linh.png" alt="Hà Linh"></span><div><strong>Hà Linh</strong><small>Affiliate Creator</small></div></div></article><article class="quote"><div><div class="quote-mark">“</div><p>Thanh toán đúng hẹn, tracking minh bạch và nhiều campaign tốt để hợp tác lâu dài.</p></div><div class="user"><span class="avatar"><img src="avatar-tuan-khang.png" alt="Tuấn Khang"></span><div><strong>Tuấn Khang</strong><small>SEO Publisher</small></div></div></article></div></div></section>
+    <div class="marquee-band reverse" aria-hidden="true"><div class="marquee-track"><div class="marquee-item">500+ Campaigns <span class="marquee-star"></span> 20K+ Partners <span class="marquee-star"></span> 1.500 Tỷ Paid <span class="marquee-star"></span> Support 24/7 <span class="marquee-star"></span></div><div class="marquee-item">500+ Campaigns <span class="marquee-star"></span> 20K+ Partners <span class="marquee-star"></span> 1.500 Tỷ Paid <span class="marquee-star"></span> Support 24/7 <span class="marquee-star"></span></div></div></div>
+
+    <section class="blog" id="blog"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Blog · Hướng dẫn</p><h2>Kiến thức để bắt đầu đúng</h2></div></div><div class="posts"><article class="post featured"><div class="post-image" style="background-image:url('blog-affiliate-roadmap.png')"></div><div class="post-body"><span class="commission-label">Cẩm nang bắt đầu · 8 phút</span><h3>Affiliate Marketing là gì? Lộ trình tạo thu nhập bền vững năm 2026</h3><p>Từ cách chọn chiến dịch đến tối ưu chuyển đổi cho traffic đầu tiên.</p><a class="read" href="#">Đọc bài viết →</a></div></article><div class="post-side-grid"><article class="post"><div class="post-image" style="background-image:url('blog-conversion-rate.png')"></div><div class="post-body"><span class="commission-label">Tối ưu</span><h3>5 cách tăng CR cho landing page Betting</h3><p>Những thay đổi nhỏ tạo khác biệt lớn.</p></div></article><article class="post"><div class="post-image" style="background-image:url('blog-case-study-growth.png')"></div><div class="post-body"><span class="commission-label">Case study</span><h3>Từ 0 đến 100 triệu hoa hồng mỗi tháng</h3><p>Chiến lược thực tế từ publisher.</p></div></article><article class="post"><div class="post-image" style="background-image:url('blog-traffic-sources.png')"></div><div class="post-body"><span class="commission-label">Traffic Strategy</span><h3>7 nguồn traffic hiệu quả cho người mới</h3><p>Xây dựng traffic đa kênh bền vững.</p></div></article><article class="post"><div class="post-image" style="background-image:url('blog-epc-performance.png')"></div><div class="post-body"><span class="commission-label">Performance</span><h3>Cách tối ưu EPC và hiệu suất mỗi tuần</h3><p>Đọc đúng dữ liệu để tăng lợi nhuận.</p></div></article></div></div><div class="blog-all"><a class="btn" href="#">Xem tất cả →</a></div></div></section>
+    <section class="cta"><div class="wrap"><div class="cta-box"><p class="eyebrow">Sẵn sàng tăng trưởng?</p><h2>Biến traffic thành doanh thu bền vững</h2><p>Tham gia cùng hơn 20.000 đối tác và bắt đầu chiến dịch đầu tiên ngay hôm nay.</p><a class="btn primary" href="#">Tạo tài khoản miễn phí →</a></div></div></section>
+  </main>
+  <footer><div class="wrap"><div class="footer-grid"><div><div class="footer-logo"><img src="x-filiate-logo.png" alt="X-Filiate"></div><p>Nền tảng Affiliate iGaming &amp; Betting giúp đối tác phát triển nguồn thu bền vững.</p></div><div><h3>Khám phá</h3><a href="#offers">Chương trình</a><a href="#offers">Ưu đãi</a><a href="#ecosystem">Về chúng tôi</a></div><div><h3>Hỗ trợ</h3><a href="#">Trung tâm trợ giúp</a><a href="#">Điều khoản</a><a href="#">Bảo mật</a></div><div><h3>Liên hệ</h3><p>support@x-filiate.example</p><p>Thứ 2–Chủ nhật<br>08:00–22:00</p></div></div><div class="copyright"><span>© 2026 X-Filiate. All rights reserved.</span><span>Option B · Trust First</span></div></div></footer>
+  <a class="chat" href="#"><span class="icon">✦</span><span>Chat với support</span></a>
+  <button class="back-top" id="backTop" aria-label="Về đầu trang">↑</button>
+  <script>
+    const track=document.getElementById('campaignTrack'),pages=[...document.querySelectorAll('.page-btn')];let page=0;
+    function showPage(n){page=Math.max(0,Math.min(2,n));track.style.transform=`translateX(-${page*33.333333}%)`;pages.forEach((b,i)=>b.classList.toggle('active',i===page))}
+    document.getElementById('prev').onclick=()=>showPage(page-1);document.getElementById('next').onclick=()=>showPage(page+1);pages.forEach(b=>b.onclick=()=>showPage(+b.dataset.page));
+    const menu=document.getElementById('mobileMenu'),toggle=document.getElementById('menuToggle'),close=document.getElementById('menuClose');function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)}toggle.onclick=()=>setMenu(true);close.onclick=()=>setMenu(false);menu.onclick=e=>{if(e.target===menu||e.target.closest('a'))setMenu(false)};document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+    const eco=document.querySelector('.eco-visual-b');if(matchMedia('(pointer:fine)').matches){eco.addEventListener('mousemove',e=>{const r=eco.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;eco.style.transform=`perspective(900px) rotateX(${-y*5}deg) rotateY(${x*6}deg)`});eco.addEventListener('mouseleave',()=>eco.style.transform='')}
+    const canvas=document.getElementById('matrixCanvas'),ctx=canvas.getContext('2d');let w,h;function size(){w=canvas.width=canvas.clientWidth*devicePixelRatio;h=canvas.height=canvas.clientHeight*devicePixelRatio}function draw(t){ctx.clearRect(0,0,w,h);ctx.strokeStyle='rgba(255,196,0,.12)';ctx.lineWidth=devicePixelRatio;for(let i=0;i<12;i++){const y=(i/11)*h;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}for(let i=0;i<12;i++){const x=(i/11)*w;ctx.beginPath();ctx.moveTo(w*.6,0);ctx.lineTo(x,h);ctx.stroke()}requestAnimationFrame(draw)}addEventListener('resize',size);size();requestAnimationFrame(draw);
+
+    // Pubzi-inspired motion language, rebuilt for XFILIATE without external libraries.
+    const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer=matchMedia('(pointer:fine)').matches;
+    const preloader=document.getElementById('preloader');
+    const finishLoad=()=>{preloader.classList.add('done');document.querySelector('.hero').classList.add('ready')};
+    addEventListener('load',()=>setTimeout(finishLoad,520),{once:true});setTimeout(finishLoad,1500);
+
+    const heroTitle=document.querySelector('.hero h1');
+    heroTitle.innerHTML=heroTitle.textContent.trim().split(/\s+/).map((word,i)=>`<span class="split-word" style="--i:${i}">${word}</span>`).join(' ');
+    const heroProof=document.querySelector('.hero-proof');
+    if(!reduceMotion){
+      for(let i=0;i<13;i++){const p=document.createElement('i');p.className='hero-particle';p.style.cssText=`--s:${5+Math.random()*13}px;--x:${5+Math.random()*90}%;--y:${8+Math.random()*80}%;--d:${2.5+Math.random()*4}s;--l:${-Math.random()*4}s;--tx:${-35+Math.random()*70}px;--ty:${-45+Math.random()*80}px`;heroProof.appendChild(p)}
+    }
+
+    const revealTargets=[...document.querySelectorAll('.section-head,.audience-head,.metrics-grid,.audience-card,.eco-shell,.campaign,.quote,.post,.cta-box,.footer-grid')];
+    revealTargets.forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--delay',`${(i%5)*90}ms`);if(el.matches('.eco-shell,.post.featured'))el.classList.add('from-left')});
+    const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target)}}),{threshold:.13,rootMargin:'0px 0px -35px'});
+    revealTargets.forEach(el=>revealObserver.observe(el));
+
+    const metricValues=[...document.querySelectorAll('.metric strong')];
+    const metricObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;metricValues.forEach((el,index)=>{const raw=el.textContent.trim(),value=Number(raw.replace(/[^0-9]/g,'')),suffix=raw.includes('K')?'K+':raw.includes('tỷ')?' tỷ':'+';const start=performance.now(),duration=1100+index*130;function tick(now){const p=Math.min(1,(now-start)/duration),e=1-Math.pow(1-p,3),n=Math.round(value*e);el.textContent=(suffix.includes('tỷ')?n.toLocaleString('en-US'):n)+suffix;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)});metricObserver.disconnect()}),{threshold:.45});
+    metricObserver.observe(document.querySelector('.metrics-grid'));
+
+    if(finePointer&&!reduceMotion){
+      const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');let mx=0,my=0,rx=0,ry=0;
+      addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.opacity=ring.style.opacity=1;dot.style.left=mx+'px';dot.style.top=my+'px'});
+      (function cursorLoop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(cursorLoop)})();
+      document.querySelectorAll('a,button,.campaign,.post,.audience-card').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('active'));el.addEventListener('mouseleave',()=>ring.classList.remove('active'))});
+      document.querySelectorAll('.btn,.arrow,.page-btn').forEach(el=>el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12}px)`}));
+      document.querySelectorAll('.btn,.arrow,.page-btn').forEach(el=>el.addEventListener('mouseleave',()=>el.style.transform=''));
+      document.querySelectorAll('.audience-card,.campaign,.post,.quote').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.setProperty('--mx',`${(x+.5)*100}%`);card.style.setProperty('--my',`${(y+.5)*100}%`);card.style.transform=`perspective(900px) rotateX(${-y*5}deg) rotateY(${x*6}deg) translateY(-4px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+    }
+
+    const parallaxImages=[...document.querySelectorAll('.audience-card img,.post-image')];let scrollTick=false;
+    function updateParallax(){const sy=scrollY,heroRect=document.querySelector('.hero').getBoundingClientRect();heroProof.style.backgroundPosition=`center calc(52% + ${Math.max(-35,Math.min(35,-heroRect.top*.035))}px)`;parallaxImages.forEach(el=>{const r=el.getBoundingClientRect(),offset=Math.max(-18,Math.min(18,(innerHeight/2-r.top-r.height/2)*.028));if(el.tagName==='IMG')el.style.objectPosition=`center calc(50% + ${offset}px)`;else el.style.backgroundPosition=`center calc(50% + ${offset}px)`});document.querySelector('.header').classList.toggle('scrolled',sy>50);document.getElementById('backTop').classList.toggle('show',sy>650);scrollTick=false}
+    if(!reduceMotion)addEventListener('scroll',()=>{if(!scrollTick){requestAnimationFrame(updateParallax);scrollTick=true}},{passive:true});
+    const backTop=document.getElementById('backTop');backTop.onclick=()=>scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'});updateParallax();
+  </script>
+</body>
+</html>
