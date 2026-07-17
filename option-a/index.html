@@ -190,6 +190,65 @@
     @media(max-width:980px){.casino-card{right:-30px}.casino-chip{right:3%}.casino-dice{left:1%}.casino-coin{left:3%}}
     @media(max-width:680px){body:after{display:none}.hero{min-height:1130px}.hero-art{opacity:.27}.casino-float{opacity:.64;scale:.72}.casino-chip{top:390px;right:-10px}.casino-card{top:545px;right:-30px}.casino-dice{top:530px;left:-16px}.casino-coin{top:355px;left:8px}.audience-item,.audience-item:nth-child(2),.audience-item:last-child{border-color:rgba(255,255,255,.11)}.slider-controls{justify-content:flex-start}.motion-line{height:1px}}
     @media(prefers-reduced-motion:reduce){.casino-float,.eco-ring,.eco-satellite,.eco-bubble,.bar-fill{animation:none!important}[data-reveal]{opacity:1;transform:none;transition:none}.parallax-media{transform:none}}
+
+    /* Hero V2 — HTML5/CSS 3D X symbol with orbiting betting objects. */
+    .hero-art,.casino-float{display:none}
+    .hero-x-stage{position:absolute;z-index:1;left:auto;right:2vw;top:165px;width:min(720px,52vw);height:610px;perspective:1100px;pointer-events:auto;transform-style:preserve-3d;isolation:isolate}
+    .hero-x-stage:before{content:"";position:absolute;left:50%;top:48%;width:410px;height:410px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,209,58,.27) 0,rgba(255,166,0,.12) 34%,transparent 69%);filter:blur(18px);animation:auraPulse 4.8s ease-in-out infinite}
+    .hero-x-stage:after{content:"";position:absolute;z-index:-1;left:50%;top:51%;width:510px;height:150px;transform:translate(-50%,-50%) rotateX(69deg);border:1px solid rgba(255,207,62,.32);border-radius:50%;box-shadow:0 0 45px rgba(255,183,0,.14),inset 0 0 35px rgba(255,183,0,.12);animation:orbitPulse 5.5s ease-in-out infinite}
+    .x-float-shell{position:absolute;z-index:3;left:50%;top:48%;width:390px;height:300px;transform:translate(-50%,-50%);transform-style:preserve-3d;animation:xBodyFloat 6.2s ease-in-out infinite}
+    .hero-x-cluster{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--cluster-rx,0deg)) rotateY(var(--cluster-ry,0deg));transition:transform .16s cubic-bezier(.2,.8,.2,1);will-change:transform}
+    .x3d-world{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-9deg) rotateY(0deg) rotateZ(-4deg);filter:drop-shadow(0 36px 30px rgba(0,0,0,.52)) drop-shadow(0 0 30px rgba(255,181,0,.22))}
+    .x-slice{position:absolute;inset:0;transform:translateZ(calc(var(--d) * 1px));filter:brightness(.32) saturate(1.4) sepia(.22);opacity:.98}
+    .x-slice:nth-child(n+8){filter:brightness(.55) saturate(1.25)}
+    .x-slice img{display:block;width:100%;height:100%;object-fit:contain}
+    .x-slice.front{filter:none;opacity:1}
+    .x-orbit{position:absolute;z-index:2;left:50%;top:48%;border-radius:50%;border:1px solid rgba(255,197,22,.23);transform-style:preserve-3d;pointer-events:none}
+    .orbit-a{width:390px;height:390px;transform:translate(-50%,-50%) rotateX(72deg) rotateZ(12deg);animation:ringSpinA 14s linear infinite}
+    .orbit-b{width:470px;height:470px;border-style:dashed;transform:translate(-50%,-50%) rotateX(67deg) rotateZ(-28deg);animation:ringSpinB 19s linear infinite reverse}
+    .orbit-a:after,.orbit-b:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;left:12%;top:12%;background:#ffe883;box-shadow:0 0 18px #ffb400}
+    .bet-object{position:absolute;z-index:5;pointer-events:none;transform-style:preserve-3d;filter:drop-shadow(0 18px 18px rgba(0,0,0,.46))}
+    .bet-chip{left:8%;top:16%;width:82px;height:82px;border-radius:50%;background:repeating-conic-gradient(#ffb400 0 13deg,#fff0a3 13deg 22deg,#9d5200 22deg 38deg);box-shadow:inset 0 0 0 8px #141414,inset 0 0 0 12px #ffc400,0 0 26px rgba(255,188,0,.2);animation:betChip 7.2s ease-in-out infinite}
+    .bet-chip:after{content:"X";position:absolute;inset:24px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#ffe675,#e88a00);color:#160e00;font-size:17px;font-weight:900}
+    .bet-card{right:8%;top:10%;width:88px;height:124px;border-radius:13px;background:linear-gradient(145deg,#fffdf5,#d9ceb5);border:1px solid #fff;box-shadow:inset 0 0 0 6px #151515,inset 0 0 0 8px #ffb800;animation:betCard 8.8s ease-in-out infinite}
+    .bet-card:before{content:"A\A ♠";white-space:pre;position:absolute;left:16px;top:12px;color:#111;font:800 22px/1 Georgia,serif}
+    .bet-card:after{content:"♠";position:absolute;right:18px;bottom:16px;color:#111;font:800 28px Georgia,serif;transform:rotate(180deg)}
+    .bet-dice{left:13%;bottom:13%;width:68px;height:68px;border-radius:17px;background:linear-gradient(145deg,#ffe77e,#f28b00);box-shadow:inset 9px 9px 16px rgba(255,255,255,.38),inset -10px -12px 18px rgba(73,33,0,.35);animation:betDice 7.8s ease-in-out infinite}
+    .bet-dice:after{content:"";position:absolute;width:9px;height:9px;left:14px;top:14px;border-radius:50%;background:#15100a;box-shadow:31px 0 #15100a,15px 15px #15100a,0 31px #15100a,31px 31px #15100a}
+    .bet-coin{right:16%;bottom:14%;width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 34% 27%,#fff2a7,#ffc400 43%,#9a4f00 78%);box-shadow:inset 0 0 0 5px rgba(255,255,255,.25),0 0 26px rgba(255,196,0,.26);animation:betCoin 6.4s ease-in-out infinite}
+    .bet-coin:after{content:"₿";position:absolute;inset:0;display:grid;place-items:center;color:#653400;font-size:24px;font-weight:900}
+    .bet-ball{right:3%;top:47%;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#fff,#ffdc45 17%,#e88800 58%,#5e2d00);box-shadow:0 0 28px rgba(255,183,0,.28);animation:betBall 5.7s ease-in-out infinite}
+    .bet-ball:after{content:"7";position:absolute;inset:0;display:grid;place-items:center;color:#211400;font-weight:900;font-size:18px}
+    .bet-ticket{left:1%;top:46%;min-width:100px;padding:13px 16px;border:1px solid rgba(255,224,117,.52);border-radius:12px;background:linear-gradient(145deg,rgba(31,25,14,.96),rgba(12,12,12,.95));color:#ffe36a;font-size:10px;font-weight:800;letter-spacing:.08em;box-shadow:inset 0 0 20px rgba(255,189,0,.08);animation:betTicket 8.1s ease-in-out infinite}
+    .bet-ticket strong{display:block;color:#fff;font-size:17px;letter-spacing:-.04em}
+    @keyframes xBodyFloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-20px)}}
+    @keyframes xShine{0%,38%{transform:translateX(-105%)}62%,100%{transform:translateX(110%)}}
+    @keyframes auraPulse{0%,100%{opacity:.62;scale:.94}50%{opacity:1;scale:1.08}}
+    @keyframes orbitPulse{0%,100%{opacity:.55;scale:.94}50%{opacity:1;scale:1.04}}
+    @keyframes ringSpinA{to{transform:translate(-50%,-50%) rotateX(72deg) rotateZ(372deg)}}
+    @keyframes ringSpinB{to{transform:translate(-50%,-50%) rotateX(67deg) rotateZ(332deg)}}
+    @keyframes betChip{0%,100%{transform:translate3d(0,0,45px) rotateX(58deg) rotateZ(0)}50%{transform:translate3d(24px,-26px,110px) rotateX(70deg) rotateZ(170deg)}}
+    @keyframes betCard{0%,100%{transform:translate3d(0,0,20px) rotate(12deg) rotateY(-12deg)}50%{transform:translate3d(-25px,32px,95px) rotate(2deg) rotateY(18deg)}}
+    @keyframes betDice{0%,100%{transform:translate3d(0,0,55px) rotate(-18deg)}50%{transform:translate3d(28px,-28px,120px) rotate(26deg)}}
+    @keyframes betCoin{0%,100%{transform:translate3d(0,0,40px) rotateY(0)}50%{transform:translate3d(-25px,-30px,105px) rotateY(180deg)}}
+    @keyframes betBall{0%,100%{transform:translate3d(0,0,25px) scale(.92)}50%{transform:translate3d(-20px,-36px,90px) scale(1.08)}}
+    @keyframes betTicket{0%,100%{transform:translate3d(0,0,10px) rotate(-8deg)}50%{transform:translate3d(24px,30px,80px) rotate(2deg)}}
+    @media(max-width:1180px){.hero-x-stage{right:-6vw;width:54vw;scale:.84}}
+    @media(max-width:980px){.hero{min-height:1370px}.hero-x-stage{left:50%;right:auto;top:570px;width:min(690px,96vw);height:470px;transform:translateX(-50%);scale:.82}.hero-visual{margin-top:420px}}
+    @media(max-width:680px){.hero{min-height:1420px}.hero-x-stage{left:50%;right:auto;top:585px;width:118vw;height:390px;transform:translateX(-50%);scale:.66}.x-float-shell{width:340px;height:260px}.bet-ticket{left:3%}.bet-ball{right:5%}.dashboard{z-index:8}.hero-visual{margin-top:420px}}
+    @media(min-width:981px){.hero-visual{height:480px}.dashboard{height:430px;padding:20px}.chart-card,.growth-card{height:230px}}
+    .support{font-family:inherit;color:#fff;cursor:pointer}
+    .support-panel{position:fixed;z-index:59;right:22px;bottom:86px;width:min(350px,calc(100vw - 28px));border:1px solid rgba(255,210,73,.24);border-radius:24px;background:rgba(12,12,12,.96);box-shadow:0 28px 90px rgba(0,0,0,.62),0 0 45px rgba(255,184,0,.1);backdrop-filter:blur(20px);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(14px) scale(.97);transform-origin:bottom right;transition:opacity .22s ease,visibility .22s ease,transform .28s cubic-bezier(.2,.8,.2,1)}
+    .support-panel.open{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+    .support-head{display:flex;align-items:center;justify-content:space-between;padding:17px 18px;border-bottom:1px solid rgba(255,255,255,.09);background:linear-gradient(120deg,rgba(255,196,0,.12),transparent)}
+    .support-agent{display:flex;align-items:center;gap:11px}.support-agent .support-dot{flex:0 0 38px;width:38px;height:38px}.support-agent strong{display:block;font-size:13px}.support-agent small{display:block;color:#8f9aab;font-size:10px;font-weight:500}
+    .support-close{width:34px;height:34px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:#171717;color:#fff;font-size:20px;cursor:pointer}
+    .support-messages{height:238px;padding:18px;display:flex;flex-direction:column;gap:10px;overflow:auto;background:radial-gradient(circle at 90% 0,rgba(255,196,0,.07),transparent 34%)}
+    .chat-message{max-width:84%;padding:11px 13px;border-radius:15px;font-size:11px;line-height:1.55}.chat-message.agent{align-self:flex-start;background:#1b1b1b;color:#e6e6e6;border-bottom-left-radius:5px}.chat-message.user{align-self:flex-end;background:linear-gradient(135deg,#ffd957,#ff9d00);color:#1d1200;border-bottom-right-radius:5px;font-weight:600}
+    .support-quick{display:flex;gap:7px;padding:0 18px 13px;overflow:auto}.support-quick button{flex:0 0 auto;padding:8px 10px;border:1px solid rgba(255,211,73,.18);border-radius:999px;background:rgba(255,196,0,.06);color:#ffe179;font:600 9px "Be Vietnam Pro",sans-serif;cursor:pointer}
+    .support-form{display:grid;grid-template-columns:1fr 42px;gap:8px;padding:13px;border-top:1px solid rgba(255,255,255,.08)}.support-form input{min-width:0;height:42px;padding:0 13px;border:1px solid rgba(255,255,255,.11);border-radius:12px;outline:0;background:#171717;color:#fff;font:500 11px "Be Vietnam Pro",sans-serif}.support-form input:focus{border-color:rgba(255,196,0,.48);box-shadow:0 0 0 3px rgba(255,196,0,.07)}.support-form button{width:42px;height:42px;border:0;border-radius:12px;background:linear-gradient(135deg,#ffe06b,#ff9d00);color:#1a1000;font-size:17px;font-weight:800;cursor:pointer}
+    @media(max-width:680px){.support-panel{right:12px;bottom:72px;width:calc(100vw - 24px)}.support-messages{height:210px}}
+    @media(prefers-reduced-motion:reduce){.hero-x-stage *{animation:none!important}.hero-x-cluster{transition:none}}
   </style>
 </head>
 <body>
@@ -214,11 +273,18 @@
   <main>
     <section class="hero">
       <canvas id="matrixCanvas" aria-hidden="true"></canvas>
-      <div class="hero-art" aria-hidden="true"></div>
-      <div class="casino-float casino-chip" data-depth=".18" aria-hidden="true"></div>
-      <div class="casino-float casino-card" data-depth=".11" aria-hidden="true"></div>
-      <div class="casino-float casino-dice" data-depth=".15" aria-hidden="true"></div>
-      <div class="casino-float casino-coin" data-depth=".2" aria-hidden="true"></div>
+      <div class="hero-x-stage" id="heroXStage" aria-hidden="true">
+        <div class="hero-x-cluster">
+          <div class="x-orbit orbit-a"></div><div class="x-orbit orbit-b"></div>
+          <div class="x-float-shell"><div class="x3d-world">
+            <span class="x-slice" style="--d:-36"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-33"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-30"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-27"><img src="../x-brand-symbol.svg" alt=""></span>
+            <span class="x-slice" style="--d:-24"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-21"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-18"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-15"><img src="../x-brand-symbol.svg" alt=""></span>
+            <span class="x-slice" style="--d:-12"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-9"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-6"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice" style="--d:-3"><img src="../x-brand-symbol.svg" alt=""></span><span class="x-slice front" style="--d:0"><img src="../x-brand-symbol.svg" alt=""></span>
+          </div></div>
+          <div class="bet-object bet-chip"></div><div class="bet-object bet-card"></div><div class="bet-object bet-dice"></div>
+          <div class="bet-object bet-coin"></div><div class="bet-object bet-ball"></div><div class="bet-object bet-ticket">LIVE ODDS<strong>+150%</strong></div>
+        </div>
+      </div>
       <div class="container">
         <div class="hero-copy">
           <span class="eyebrow">Nền tảng Affiliate thế hệ mới</span>
@@ -337,7 +403,13 @@
 
   <footer><div class="container"><div class="footer-grid"><div><a class="logo-shell" href="#"><img src="../x-filiate-logo.png" alt="X-Filiate"></a><p class="footer-copy">Nền tảng Affiliate iGaming & Betting tiên phong, kết nối publisher với những chiến dịch chất lượng và minh bạch.</p></div><div class="footer-col"><h4>Chương trình</h4><a href="#">Chiến dịch mới</a><a href="#">Top ưu đãi</a><a href="#">Bảng hoa hồng</a></div><div class="footer-col"><h4>Hỗ trợ</h4><a href="#">Trung tâm trợ giúp</a><a href="#">Hướng dẫn</a><a href="#">Liên hệ</a></div><div class="footer-col"><h4>Pháp lý</h4><a href="#">Điều khoản</a><a href="#">Bảo mật</a><a href="#">Thanh toán</a></div></div><div class="copyright"><span>© 2026 X-Filiate. All rights reserved.</span><span>Affiliate smarter. Grow further.</span></div></div></footer>
 
-  <a class="support" href="#" aria-label="Chat với hỗ trợ"><span class="support-dot">✦</span><span>Chat với Support</span></a>
+  <aside class="support-panel" id="supportPanel" aria-hidden="true" aria-label="Khung chat hỗ trợ">
+    <div class="support-head"><div class="support-agent"><span class="support-dot">✦</span><div><strong>X-Filiate Support</strong><small>Đang online · phản hồi nhanh</small></div></div><button class="support-close" id="supportClose" type="button" aria-label="Đóng khung chat">×</button></div>
+    <div class="support-messages" id="supportMessages" aria-live="polite"><div class="chat-message agent">Xin chào! 👋 Mình có thể giúp bạn tìm chiến dịch phù hợp hoặc hướng dẫn bắt đầu với X-Filiate.</div></div>
+    <div class="support-quick"><button type="button" data-message="Tôi muốn tìm chiến dịch phù hợp">Tìm chiến dịch</button><button type="button" data-message="Hướng dẫn đăng ký tài khoản">Hướng dẫn đăng ký</button></div>
+    <form class="support-form" id="supportForm"><input id="supportInput" type="text" placeholder="Nhập tin nhắn..." autocomplete="off" aria-label="Tin nhắn hỗ trợ"><button type="submit" aria-label="Gửi tin nhắn">→</button></form>
+  </aside>
+  <button class="support" id="supportToggle" type="button" aria-label="Mở chat hỗ trợ" aria-controls="supportPanel" aria-expanded="false"><span class="support-dot">✦</span><span>Chat với Support</span></button>
   <script>
     const track=document.getElementById('track');let page=0;
     const pageButtons=[...document.querySelectorAll('.page-number')];
@@ -382,6 +454,56 @@
       if(!reduced)requestAnimationFrame(drawMatrix);
     }
     window.addEventListener('resize',resizeMatrix,{passive:true});resizeMatrix();requestAnimationFrame(drawMatrix);
+
+    const heroXStage=document.getElementById('heroXStage');
+    if(heroXStage&&window.matchMedia('(pointer:fine)').matches&&!reduced){
+      heroXStage.addEventListener('pointermove',(event)=>{
+        const bounds=heroXStage.getBoundingClientRect();
+        const x=(event.clientX-bounds.left)/bounds.width-.5;
+        const y=(event.clientY-bounds.top)/bounds.height-.5;
+        heroXStage.style.setProperty('--cluster-ry',`${x*18}deg`);
+        heroXStage.style.setProperty('--cluster-rx',`${-y*12}deg`);
+      });
+      heroXStage.addEventListener('pointerleave',()=>{
+        heroXStage.style.setProperty('--cluster-ry','0deg');
+        heroXStage.style.setProperty('--cluster-rx','0deg');
+      });
+    }
+
+    const supportToggle=document.getElementById('supportToggle');
+    const supportPanel=document.getElementById('supportPanel');
+    const supportClose=document.getElementById('supportClose');
+    const supportForm=document.getElementById('supportForm');
+    const supportInput=document.getElementById('supportInput');
+    const supportMessages=document.getElementById('supportMessages');
+    function setSupportChat(open){
+      supportPanel.classList.toggle('open',open);
+      supportPanel.setAttribute('aria-hidden',String(!open));
+      supportToggle.setAttribute('aria-expanded',String(open));
+      supportToggle.setAttribute('aria-label',open?'Đóng chat hỗ trợ':'Mở chat hỗ trợ');
+      if(open)setTimeout(()=>supportInput.focus(),180);
+    }
+    function appendSupportMessage(text,type='user'){
+      const message=document.createElement('div');
+      message.className=`chat-message ${type}`;
+      message.textContent=text;
+      supportMessages.appendChild(message);
+      supportMessages.scrollTop=supportMessages.scrollHeight;
+    }
+    supportToggle.addEventListener('click',()=>setSupportChat(!supportPanel.classList.contains('open')));
+    supportClose.addEventListener('click',()=>setSupportChat(false));
+    supportPanel.querySelectorAll('[data-message]').forEach(button=>button.addEventListener('click',()=>{
+      appendSupportMessage(button.dataset.message);
+      setTimeout(()=>appendSupportMessage('Cảm ơn bạn! Support sẽ tư vấn ngay trong ít phút.','agent'),420);
+    }));
+    supportForm.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      const text=supportInput.value.trim();
+      if(!text)return;
+      appendSupportMessage(text);supportInput.value='';
+      setTimeout(()=>appendSupportMessage('Mình đã nhận được tin nhắn. Bạn vui lòng chờ một chút nhé!','agent'),420);
+    });
+    document.addEventListener('keydown',(event)=>{if(event.key==='Escape'&&supportPanel.classList.contains('open'))setSupportChat(false)});
 
     const ecosystemCard=document.querySelector('.eco-visual');
     const canTilt=window.matchMedia('(pointer:fine)').matches&&!reduced;
