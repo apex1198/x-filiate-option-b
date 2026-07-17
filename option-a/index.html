@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>X-Filiate — Premium Affiliate Network</title>
+  <meta name="description" content="Nền tảng Affiliate iGaming &amp; Betting giúp đối tác tăng trưởng doanh thu bền vững.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#06080d;--ink-2:#090d14;--surface:#0d121b;--surface-2:#111824;
+      --line:rgba(255,255,255,.09);--muted:#98a1b2;--white:#f8fafc;
+      --gold:#ffc400;--gold-deep:#ff9d00;--gold-pale:#ffe88a;
+      --gold-glow:rgba(255,185,0,.28);--radius:22px;--shadow:0 30px 80px rgba(0,0,0,.42);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ink);color:var(--white);font-family:"Be Vietnam Pro","Google Sans",Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.24;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,#000,transparent 70%)}
+    a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(255,196,0,.25);border-radius:999px;background:rgba(255,196,0,.07);color:var(--gold-pale);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+    h1,h2,h3,p{margin-top:0} h2{font-size:clamp(32px,4vw,54px);line-height:1.13;letter-spacing:-.045em;margin-bottom:18px}
+    .gradient-text{background:linear-gradient(115deg,#fff 12%,var(--gold-pale) 50%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .section{position:relative;padding:112px 0}.section-intro{max-width:710px;margin-bottom:44px}.section-intro.center{text-align:center;margin:0 auto 50px}.section-intro p{color:var(--muted);font-size:16px}
+    .btn{height:50px;padding:0 23px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:14px;border:1px solid transparent;transition:.25s ease;cursor:pointer}
+    .btn-primary{color:#171000;background:linear-gradient(135deg,#ffe26a 0%,var(--gold) 45%,var(--gold-deep) 100%);box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 12px 38px var(--gold-glow)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.3) inset,0 18px 50px rgba(255,185,0,.38)}
+    .btn-ghost{border-color:var(--line);background:rgba(255,255,255,.035);color:#fff}.btn-ghost:hover{border-color:rgba(255,196,0,.35);background:rgba(255,196,0,.06)}
+    header{position:fixed;z-index:50;top:0;left:0;right:0;padding:16px 0;background:linear-gradient(to bottom,rgba(6,8,13,.94),rgba(6,8,13,.58),transparent);backdrop-filter:blur(10px)}
+    nav{height:62px;padding:0 10px 0 15px;border:1px solid var(--line);border-radius:18px;background:rgba(11,15,23,.72);display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+    .logo-shell{width:202px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;padding:6px 9px;overflow:hidden}
+    .logo-shell img{display:block;width:100%;height:100%;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:32px;color:#b8bfca;font-size:13px;font-weight:600}.nav-links a:hover{color:#fff}
+    .nav-actions{display:flex;align-items:center;gap:9px}.nav-actions .btn{height:42px;padding:0 16px;border-radius:11px}
+    .hero{min-height:940px;padding:190px 0 90px;position:relative;isolation:isolate}
+    .hero:before{content:"";position:absolute;z-index:-2;width:760px;height:760px;left:50%;top:50px;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,190,0,.16),rgba(255,157,0,.055) 35%,transparent 68%);filter:blur(18px)}
+    .hero-copy{text-align:center;max-width:960px;margin:auto;position:relative;z-index:3}
+    .hero h1{font-size:clamp(50px,7vw,86px);line-height:1.02;letter-spacing:-.06em;margin:24px 0 26px;font-weight:700}
+    .hero .lead{max-width:720px;margin:0 auto 34px;color:#a9b1be;font-size:17px;line-height:1.8}.hero-actions{display:flex;justify-content:center;gap:12px}
+    .hero-visual{height:480px;margin-top:42px;position:relative;perspective:1000px}
+    .orbital{position:absolute;left:50%;top:0;transform:translateX(-50%) rotateX(63deg) rotateZ(-14deg);width:560px;height:560px;border-radius:50%;background:conic-gradient(from 20deg,#5b3600,#ff9d00,#fff0a9,#ffbd00,#382000,#ffc400,#fff4bc,#6e3e00);box-shadow:0 0 90px rgba(255,171,0,.22),inset 0 0 55px rgba(255,255,255,.3);filter:saturate(1.08)}
+    .orbital:before{content:"";position:absolute;inset:74px;border-radius:50%;background:var(--ink);box-shadow:inset 0 0 70px rgba(0,0,0,.95),0 0 55px rgba(255,196,0,.18)}
+    .orbital:after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(255,231,148,.65);filter:blur(1px)}
+    .dashboard{position:absolute;z-index:3;left:50%;bottom:-95px;transform:translateX(-50%) rotateX(5deg);width:min(900px,90vw);height:330px;border:1px solid rgba(255,210,73,.25);border-radius:24px;background:linear-gradient(145deg,rgba(19,26,38,.96),rgba(8,12,18,.98));box-shadow:0 35px 100px rgba(0,0,0,.75),0 0 60px rgba(255,184,0,.14);padding:17px;overflow:hidden}
+    .dash-top{height:42px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 4px 13px}.mini-logo{font-weight:800;letter-spacing:-.04em}.mini-logo span{color:var(--gold)}
+    .dash-main{display:grid;grid-template-columns:165px 1fr;gap:17px;padding-top:17px}.sidebar{border-right:1px solid var(--line);display:grid;align-content:start;gap:8px;padding-right:17px}.side-item{height:34px;border-radius:9px;background:rgba(255,255,255,.025);color:#788294;font-size:10px;padding:10px}.side-item.active{background:rgba(255,196,0,.1);color:var(--gold-pale)}
+    .dash-content{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric{padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);font-size:10px;color:#7d8797}.metric strong{display:block;color:#fff;font-size:20px;margin-top:3px}.metric strong.gold{color:var(--gold)}
+    .chart{grid-column:span 2;height:140px;padding:14px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(to bottom,rgba(255,196,0,.045),transparent);position:relative;overflow:hidden}.chart:after{content:"";position:absolute;left:16px;right:16px;bottom:22px;height:80px;background:linear-gradient(135deg,transparent 0 12%,rgba(255,196,0,.2) 12% 14%,transparent 14% 25%,rgba(255,196,0,.4) 25% 27%,transparent 27% 42%,rgba(255,196,0,.55) 42% 44%,transparent 44% 55%,rgba(255,196,0,.8) 55% 57%,transparent 57% 72%,var(--gold) 72% 74%,transparent 74%);filter:drop-shadow(0 0 7px var(--gold-glow));transform:skewY(-8deg)}
+    .payout{height:140px;border-radius:14px;border:1px solid var(--line);padding:15px;background:radial-gradient(circle at top right,rgba(255,196,0,.1),transparent 50%)}
+    .numbers-wrap{padding-top:58px}.numbers{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,rgba(255,255,255,.045),rgba(255,255,255,.015));box-shadow:var(--shadow);overflow:hidden}
+    .number{padding:34px 28px;border-right:1px solid var(--line);text-align:center}.number:last-child{border:0}.number strong{display:block;font-size:34px;letter-spacing:-.04em;color:var(--gold-pale)}.number span{color:var(--muted);font-size:13px}
+    .audience{padding:88px 0 10px}.audience-head{text-align:center;max-width:720px;margin:0 auto 32px}.audience-head h2{font-size:clamp(28px,3.4vw,44px);margin:16px 0 10px}.audience-head p{color:var(--muted);font-size:14px}
+    .audience-panel{position:relative}.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .audience-item{min-width:0;overflow:hidden;border:1px solid rgba(15,29,49,.1);border-radius:22px;background:#fff;box-shadow:0 18px 45px rgba(29,37,50,.07);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.audience-item:hover{transform:translateY(-7px);border-color:rgba(255,176,0,.32);box-shadow:0 28px 65px rgba(29,37,50,.13)}.audience-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b1424}.audience-media:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,15,26,.2),transparent 48%)}.audience-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.8,.2,1)}.audience-item:hover .audience-media img{transform:scale(1.045)}.audience-body{padding:23px 21px 25px}.audience-body h3{font-size:16px;line-height:1.35;margin:0 0 10px;color:#111827}.audience-body p{font-size:12px;line-height:1.65;margin:0;color:#626d7d}
+    .offers{background:linear-gradient(to bottom,transparent,rgba(255,196,0,.025),transparent)}
+    .offer-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px}.slider-controls{display:flex;gap:8px}.round-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:#fff;font-size:18px;cursor:pointer}.round-btn:hover{border-color:var(--gold);color:var(--gold)}
+    .slider-window{overflow:hidden}.slider-track{display:flex;width:200%;transition:transform .55s cubic-bezier(.2,.8,.2,1)}.slide{width:50%;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:2px}
+    .campaign{min-width:0;border:1px solid var(--line);border-radius:20px;background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.012));padding:18px;transition:.3s;position:relative;overflow:hidden}.campaign:hover{transform:translateY(-6px);border-color:rgba(255,196,0,.4);box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 30px rgba(255,196,0,.08)}
+    .campaign:after{content:"";position:absolute;inset:auto -40px -60px auto;width:110px;height:110px;border-radius:50%;background:var(--gold);filter:blur(65px);opacity:.12}
+    .brand-box{height:106px;border-radius:15px;display:grid;place-items:center;background:radial-gradient(circle at 50% 15%,#293242,#101620 62%);border:1px solid var(--line);font-weight:800;font-size:18px;letter-spacing:-.04em}.brand-box b{color:var(--gold)}
+    .campaign h3{font-size:15px;margin:17px 0 10px}.campaign .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.commission{font-size:19px;font-weight:700;color:var(--gold-pale);margin:2px 0 16px}.detail{font-size:12px;font-weight:700;color:#fff}.detail span{color:var(--gold);margin-left:4px}
+    .ecosystem-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}.eco-visual{min-height:520px;border-radius:28px;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,rgba(255,196,0,.15),transparent 36%),linear-gradient(145deg,#101722,#090d14);position:relative;box-shadow:var(--shadow);overflow:hidden}
+    .eco-ring{position:absolute;width:310px;height:310px;border:55px solid transparent;border-radius:50%;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-24deg);background:linear-gradient(var(--surface),var(--surface)) padding-box,conic-gradient(#5e3700,var(--gold),#fff0a3,var(--gold-deep),#5e3700) border-box;box-shadow:0 0 70px rgba(255,196,0,.16)}
+    .float-card{position:absolute;padding:15px 17px;border:1px solid rgba(255,255,255,.11);border-radius:15px;background:rgba(14,20,30,.78);backdrop-filter:blur(14px);box-shadow:0 20px 40px rgba(0,0,0,.35);font-size:12px}.float-card strong{display:block;font-size:17px;color:var(--gold-pale)}.fc1{top:74px;left:35px}.fc2{right:28px;top:182px}.fc3{left:72px;bottom:48px}
+    .feature-list{display:grid;gap:13px;margin:30px 0}.feature{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.02)}.check{flex:0 0 27px;width:27px;height:27px;border-radius:9px;display:grid;place-items:center;background:rgba(255,196,0,.12);color:var(--gold);font-weight:800}.feature p{margin:1px 0;color:#c4cad4;font-size:13px}
+    .eco-note{font-size:19px;font-weight:700;margin:24px 0;color:#fff}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.quote{padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));min-height:260px;display:flex;flex-direction:column;justify-content:space-between}.stars{color:var(--gold);letter-spacing:5px}.quote-text{color:#d4d8df;font-size:14px}.user{display:flex;align-items:center;gap:12px}.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#7c4700);display:grid;place-items:center;font-weight:800;color:#151006}.user small{display:block;color:var(--muted)}
+    .blog-grid{display:grid;grid-template-columns:1.25fr .875fr .875fr;gap:16px}.article{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface);transition:.3s}.article:hover{transform:translateY(-5px);border-color:rgba(255,196,0,.3)}.article-cover{height:180px;position:relative;background-color:#0b1424;background-size:cover;background-position:center}.article.featured .article-cover{height:270px}.article-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,22,.18),transparent 45%)}.article-copy{padding:22px}.article-copy small{color:#a66f00;font-weight:700}.article-copy h3{font-size:17px;line-height:1.45;margin:9px 0}.article-copy p{color:var(--muted);font-size:12px;margin:0}.blog-actions{display:flex;justify-content:center;margin-top:34px}
+    .cta{padding:0 0 110px}.cta-box{border:1px solid rgba(255,210,73,.24);border-radius:30px;padding:72px 50px;text-align:center;background:radial-gradient(circle at 50% 120%,rgba(255,196,0,.24),transparent 55%),linear-gradient(145deg,#141b26,#090d14);box-shadow:0 30px 100px rgba(0,0,0,.45);position:relative;overflow:hidden}.cta-box h2{max-width:760px;margin:0 auto 18px}.cta-box p{color:var(--muted);max-width:650px;margin:0 auto 28px}
+    footer{padding:60px 0 34px;border-top:1px solid var(--line);background:#05070b}.footer-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:50px}.footer-copy{color:var(--muted);font-size:12px;max-width:320px;margin-top:20px}.footer-col h4{font-size:13px;margin:0 0 16px}.footer-col a{display:block;color:var(--muted);font-size:12px;margin:9px 0}.copyright{margin-top:45px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#697284;font-size:11px}
+    .support{position:fixed;z-index:60;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;padding:10px 15px 10px 10px;border:1px solid rgba(255,210,73,.3);border-radius:999px;background:rgba(13,18,27,.9);backdrop-filter:blur(15px);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 25px rgba(255,196,0,.08);font-size:12px;font-weight:700}.support-dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-pale),var(--gold-deep));color:#1c1200;position:relative}.support-dot:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#53e28c;right:-1px;bottom:1px;border:2px solid var(--surface)}
+    @media(max-width:980px){.nav-links{display:none}.hero{min-height:900px}.numbers{grid-template-columns:repeat(2,1fr)}.number:nth-child(2){border-right:0}.number:nth-child(-n+2){border-bottom:1px solid var(--line)}.audience-grid{grid-template-columns:repeat(2,1fr)}.audience-item:nth-child(2){border-right:0}.audience-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.44)}.slide{grid-template-columns:repeat(2,1fr)}.campaign:nth-child(5){display:none}.ecosystem-grid{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr 1fr}.article.featured{grid-column:span 2}.testimonial-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}.footer-col:last-child{display:none}}
+    @media(max-width:680px){.container{width:min(100% - 24px,1180px)}header{padding:10px 0}.logo-shell{width:156px;height:34px}.nav-actions .btn-ghost{display:none}.nav-actions .btn{height:38px;padding:0 12px}.hero{padding-top:145px;min-height:820px}.hero h1{font-size:46px}.hero .lead{font-size:14px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.hero-visual{height:380px}.orbital{width:380px;height:380px}.orbital:before{inset:52px}.dashboard{height:250px;bottom:-45px;padding:10px}.dash-main{grid-template-columns:1fr}.sidebar{display:none}.chart,.payout{height:105px}.numbers-wrap{padding-top:30px}.numbers{grid-template-columns:1fr 1fr}.number{padding:22px 17px}.number strong{font-size:26px}.section{padding:78px 0}.offer-head{align-items:center}.slide{grid-template-columns:1fr}.campaign:nth-child(n+3){display:none}.ecosystem-grid{gap:40px}.eco-visual{min-height:430px}.eco-ring{width:240px;height:240px;border-width:42px}.fc3{left:20px}.blog-grid{grid-template-columns:1fr}.article.featured{grid-column:auto}.article.featured .article-cover{height:200px}.cta-box{padding:55px 20px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:span 2}.copyright{display:block}.copyright span{display:block;margin-top:8px}.support{right:12px;bottom:12px}.support>span:last-child{display:none}}
+
+    /* Light premium direction — dark surfaces are kept only where contrast adds value. */
+    body{background:#f6f4ef;color:#111827}
+    body:before{opacity:.42;background-image:linear-gradient(rgba(20,35,58,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(20,35,58,.035) 1px,transparent 1px)}
+    .eyebrow{color:#8a6200;background:rgba(255,196,0,.11);border-color:rgba(182,128,0,.22)}
+    .gradient-text{background:linear-gradient(112deg,#111827 0%,#735000 47%,#e59400 86%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header{background:linear-gradient(to bottom,rgba(246,244,239,.97),rgba(246,244,239,.72),transparent)}
+    nav{border-color:rgba(15,29,49,.1);background:rgba(255,255,255,.78);box-shadow:0 12px 40px rgba(27,35,48,.08)}
+    .nav-links{color:#5e6878}.nav-links a:hover{color:#111827}.btn-ghost{border-color:rgba(15,29,49,.12);background:rgba(255,255,255,.66);color:#172033}.btn-ghost:hover{background:#fff}
+    .hero{min-height:1080px;padding-top:205px;overflow:hidden;background:radial-gradient(circle at 76% 20%,rgba(255,196,0,.13),transparent 30%),linear-gradient(180deg,#faf8f3 0%,#f4f0e6 72%,#f6f4ef 100%)}
+    .hero:before{width:860px;height:860px;left:78%;top:50px;background:radial-gradient(circle,rgba(255,196,0,.15),transparent 66%);filter:blur(10px)}
+    .hero:after{content:"";position:absolute;z-index:0;pointer-events:none;left:0;right:0;bottom:-1px;height:330px;background:linear-gradient(to bottom,rgba(246,244,239,0) 0%,rgba(246,244,239,.2) 27%,rgba(246,244,239,.78) 72%,#f6f4ef 100%)}
+    .hero>.container{position:relative;z-index:2}
+    #matrixCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.85;pointer-events:none}
+    .hero-art{position:absolute;z-index:-1;right:-2%;top:96px;width:69%;height:690px;background:url('../hero-x-realistic-v2.png') center right/cover no-repeat;mask-image:linear-gradient(90deg,transparent 0%,#000 19%,#000 90%,transparent 100%);opacity:.97}
+    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#faf8f3 0%,rgba(250,248,243,.66) 16%,transparent 42%),linear-gradient(to bottom,transparent 48%,rgba(246,244,239,.35) 72%,#f6f4ef 100%)}
+    .hero-copy{text-align:left;max-width:650px;margin:0;position:relative;z-index:3}
+    .hero h1{color:#111827;font-size:clamp(50px,6.2vw,82px);text-shadow:0 2px 30px rgba(255,255,255,.75)}
+    .hero .lead{max-width:610px;margin:0 0 34px;color:#596577}.hero-actions{justify-content:flex-start}
+    .hero-visual{height:430px;margin-top:96px;z-index:4}.orbital{display:none}
+    .dashboard{height:405px;bottom:0;width:min(960px,92vw);padding:18px 20px;color:#fff;transform:translateX(-50%) rotateX(2deg);border-color:rgba(255,210,73,.3);background:linear-gradient(145deg,#172131,#0a1019 74%);box-shadow:0 34px 80px rgba(20,27,39,.28),0 0 70px rgba(255,184,0,.12)}
+    .dash-top{height:44px;border-color:rgba(255,255,255,.09)}.period-badge{padding:6px 10px;border-radius:999px;color:#ffe58b;background:rgba(255,196,0,.1);font-size:9px;font-weight:700;letter-spacing:.08em}
+    .dash-main{display:block;padding-top:14px}.dash-stats{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:10px}.dashboard .metric{padding:12px 14px;border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.035)}.dashboard .metric strong{font-size:19px}.dashboard .metric:first-child strong{font-size:24px;color:#ffe27a}
+    .revenue-panel{display:grid;grid-template-columns:1fr 215px;gap:12px;margin-top:11px}.chart-card,.growth-card{height:232px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));padding:14px 16px}
+    .chart-header{display:flex;align-items:center;justify-content:space-between}.chart-header span{font-size:10px;color:#8d98a9}.chart-header strong{font-size:12px;color:#dbe2ec}.bars{height:170px;display:grid;grid-template-columns:repeat(6,1fr);align-items:end;gap:14px;padding-top:20px;border-bottom:1px solid rgba(255,255,255,.07);background:repeating-linear-gradient(to bottom,rgba(255,255,255,.045) 0 1px,transparent 1px 43px)}
+    .bar-col{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}.bar-value{font-size:8px;color:#aeb7c4}.bar-track{height:132px;width:26px;display:flex;align-items:flex-end;border-radius:8px;background:rgba(255,255,255,.035);overflow:hidden}.bar-fill{width:100%;height:var(--h);border-radius:8px 8px 3px 3px;background:linear-gradient(to top,#ff9d00,#ffe066);box-shadow:0 0 18px rgba(255,196,0,.26);animation:barRise 1.2s cubic-bezier(.2,.8,.2,1) both}.bar-col small{font-size:8px;color:#718096}@keyframes barRise{from{height:0}}
+    .growth-card{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(255,196,0,.16),transparent 45%),rgba(255,255,255,.025)}.growth-card small{color:#8e9aab;font-size:9px}.growth-card .big{display:block;font-size:32px;color:#ffe173;margin:12px 0 3px}.growth-card p{font-size:10px;color:#aab4c3;margin:0}
+    .numbers-wrap{position:relative;z-index:6;margin-top:-34px;padding-top:0}.numbers-wrap:before{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:50%;background:linear-gradient(135deg,#ff9d00 0%,#ffc400 52%,#ffe27a 100%)}.numbers-wrap>.container{position:relative;z-index:1}.numbers{border-color:rgba(15,29,49,.1);background:rgba(255,255,255,.82);backdrop-filter:blur(18px);box-shadow:0 25px 60px rgba(29,37,50,.08)}.number{border-color:rgba(15,29,49,.1)}.number strong{color:#9a6b00}
+    .offers{background:linear-gradient(to bottom,transparent,rgba(255,196,0,.075),transparent)}.round-btn{border-color:rgba(15,29,49,.11);background:#fff;color:#172033}
+    .campaign{border-color:rgba(15,29,49,.1);background:#fff;box-shadow:0 16px 40px rgba(29,37,50,.06)}.campaign:hover{box-shadow:0 24px 55px rgba(29,37,50,.12)}.campaign h3{color:#111827}.commission{color:#9b6b00}.detail{color:#172033}
+    .feature{border-color:rgba(15,29,49,.1);background:rgba(255,255,255,.72)}.feature p{color:#4f5b6c}.eco-note{color:#121b2b}
+    .quote{border-color:rgba(15,29,49,.1);background:#fff;box-shadow:0 18px 45px rgba(29,37,50,.06)}.quote-text{color:#485465}.article{border-color:rgba(15,29,49,.1);background:#fff;box-shadow:0 16px 40px rgba(29,37,50,.06)}
+    .testimonials{background:linear-gradient(135deg,#ff9d00 0%,#ffc400 48%,#ffe276 100%);overflow:hidden}.testimonials:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-190px;top:-220px}.testimonials .eyebrow{color:#3a2800;background:rgba(255,255,255,.42);border-color:rgba(255,255,255,.45)}.testimonials .gradient-text{background:linear-gradient(112deg,#101827,#624000 72%);-webkit-background-clip:text;background-clip:text;color:transparent}.testimonials .quote{background:rgba(255,255,255,.8);border-color:rgba(255,255,255,.62);box-shadow:0 22px 55px rgba(116,72,0,.14);backdrop-filter:blur(12px)}.testimonials .stars{color:#c37800}.testimonials .quote-text{color:#332a1b}.testimonials .user small{color:#6f5c3b}
+    .number strong{background:linear-gradient(115deg,#ff9d00,#ffc400 58%,#e68a00);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .dashboard{background:#111a27;transform:translateX(-50%) translateY(-18px) rotateX(1deg);border-color:rgba(255,205,48,.34);box-shadow:0 54px 120px rgba(17,25,38,.34),0 24px 48px rgba(17,25,38,.26),0 8px 18px rgba(17,25,38,.18),0 0 0 1px rgba(255,210,73,.08);opacity:1;filter:none;mix-blend-mode:normal;isolation:isolate}
+    .dashboard:before{content:"";position:absolute;inset:1px;border:1px solid rgba(255,255,255,.055);border-radius:22px;pointer-events:none}
+    .dash-brand{display:flex;align-items:center;gap:10px}.dash-brand-logo{width:146px;height:27px;padding:5px 7px;border-radius:7px;background:#fff;display:flex;align-items:center}.dash-brand-logo img{display:block;width:100%;height:100%;object-fit:contain}.dash-brand-label{font-size:10px;color:#8e99aa;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+    .dashboard .metric{background:#182333}.chart-card,.growth-card{background:#151f2d}.growth-card{background-color:#151f2d;background-image:none}.period-badge{background:#202b3a}.dashboard .dash-top{background:transparent}.dashboard .revenue-panel{background:transparent}
+    .brand-box .demo-logo{display:inline-flex;align-items:center;justify-content:center;font-size:21px;font-weight:800;letter-spacing:-.045em;line-height:1;padding:10px 13px;border-radius:11px;background:rgba(255,255,255,.045);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .brand-box .sunwin{background:linear-gradient(110deg,#ff7a00,#ffd84d);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px rgba(255,161,0,.24)}
+    .brand-box .hitclub{background:linear-gradient(110deg,#f5fbff,#47c9ff);-webkit-background-clip:text;background-clip:text;color:transparent}.brand-box .hitclub em{font-style:normal;color:#ffc400}
+    .brand-box .bet86{color:#ffe27a}.brand-box .bet86 b{color:#fff}.brand-box .may88{background:linear-gradient(110deg,#ffca28,#ff7a00);-webkit-background-clip:text;background-clip:text;color:transparent}.brand-box .zowin{background:linear-gradient(110deg,#ffffff,#ffd54f);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .eco-visual{isolation:isolate;transform-style:preserve-3d;will-change:transform;transition:transform .42s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}.eco-visual:hover{box-shadow:0 38px 90px rgba(17,25,38,.34),0 0 55px rgba(255,196,0,.12)}.eco-visual:before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(255,214,80,.12),transparent 28%);transition:background .16s linear}.eco-visual:after{content:"";position:absolute;z-index:0;left:50%;top:48%;width:410px;height:410px;transform:translate(-50%,-50%);border-radius:50%;background:repeating-conic-gradient(from 3deg,rgba(255,207,57,.16) 0 1deg,transparent 1deg 45deg);mask-image:radial-gradient(circle,transparent 0 25%,#000 26% 74%,transparent 75%)}
+    .eco-ring{z-index:1;width:286px;height:286px;border-width:48px;animation:ringTurn 22s linear infinite}.eco-ring:after{content:"";position:absolute;inset:-74px;border:1px dashed rgba(255,215,83,.22);border-radius:50%}
+    @keyframes ringTurn{to{transform:translate(-50%,-50%) rotate(336deg)}}
+    .eco-core{position:absolute;z-index:4;left:50%;top:48%;width:124px;height:112px;transform:translate(-50%,-50%) translateZ(34px);border-radius:26px;padding:18px;background:#fff;box-shadow:0 0 0 7px rgba(255,255,255,.07),0 0 55px rgba(255,196,0,.34);overflow:visible}.eco-core img{display:block;width:100%;height:100%;object-fit:contain;border-radius:0}
+    .eco-satellite{position:absolute;z-index:3;left:50%;top:48%;width:380px;height:380px;transform:translate(-50%,-50%);border:1px dashed rgba(255,221,112,.2);border-radius:50%;animation:satelliteOrbit 10s linear infinite;pointer-events:none}.eco-satellite span{position:absolute;width:20px;height:20px;right:-10px;top:50%;margin-top:-10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0 0 12%,#ffc400 38%,#ff8a00 72%);box-shadow:0 0 0 6px rgba(255,196,0,.08),0 0 24px rgba(255,196,0,.65)}.eco-satellite span:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;right:3px;bottom:4px;background:rgba(93,54,0,.34)}@keyframes satelliteOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    .eco-bubble{position:absolute;z-index:5;display:flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid rgba(255,220,106,.2);border-radius:999px;background:rgba(14,21,32,.78);backdrop-filter:blur(12px);box-shadow:0 14px 30px rgba(0,0,0,.26);color:#e7edf5;font-size:10px;font-weight:600;white-space:nowrap;animation:bubbleFloat 4.8s ease-in-out infinite}.eco-bubble:before{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#ffe88a,#ff9d00);box-shadow:0 0 11px rgba(255,196,0,.8)}
+    .bubble-1{top:48px;left:50%;transform:translateX(-50%)}.bubble-2{top:112px;right:25px;animation-delay:-.8s}.bubble-3{top:242px;right:16px;animation-delay:-1.6s}.bubble-4{right:64px;bottom:47px;animation-delay:-2.4s}.bubble-5{left:66px;bottom:42px;animation-delay:-3.2s}.bubble-6{left:17px;top:244px;animation-delay:-4s}.bubble-7{left:29px;top:109px;animation-delay:-2s}
+    @keyframes bubbleFloat{0%,100%{margin-top:0}50%{margin-top:-7px}}
+    .cta-box{color:#fff}.cta-box .gradient-text{background:linear-gradient(115deg,#fff 12%,#ffe88a 55%,#ff9d00);-webkit-background-clip:text;background-clip:text;color:transparent}
+    footer{color:#fff}.support{color:#fff}
+    @media(max-width:980px){.hero-art{width:82%;opacity:.42}.hero-copy{max-width:670px}.dashboard{height:410px}.revenue-panel{grid-template-columns:1fr 190px}}
+    @media(max-width:680px){.hero{min-height:1000px;padding-top:145px}.hero-art{top:290px;width:120%;right:-35%;height:430px;opacity:.32}.hero h1{font-size:45px}.hero-visual{height:390px;margin-top:100px}.dashboard{height:375px;bottom:0;padding:12px}.dash-stats{grid-template-columns:1fr 1fr}.dash-stats .metric:first-child{grid-column:span 2}.revenue-panel{grid-template-columns:1fr}.chart-card{height:218px}.growth-card{display:none}.bars{gap:6px}.bar-track{width:18px;height:122px}.audience{padding-top:68px}.audience-head{margin-bottom:24px}.audience-panel{padding:7px;border-radius:20px}.audience-grid{border-radius:14px}.audience-item{min-height:118px;padding:19px 12px;display:block}.audience-icon{width:38px;height:38px;margin-bottom:10px;border-radius:11px}.audience-item h3{font-size:12px}.audience-item p{font-size:9px}.eco-bubble{font-size:8px;padding:7px 9px}.bubble-2,.bubble-3{right:5px}.bubble-6,.bubble-7{left:5px}.bubble-4{right:28px}.bubble-5{left:28px}.eco-core{width:102px;height:92px;padding:15px}.eco-ring{width:235px;height:235px;border-width:40px}.eco-satellite{width:315px;height:315px}}
+    @media(max-width:980px){.audience-item,.audience-item:nth-child(2),.audience-item:last-child{min-height:0;padding:0;border:1px solid rgba(15,29,49,.1)}.audience-item:nth-child(-n+2){border-bottom-color:rgba(15,29,49,.1)}}
+    @media(max-width:680px){.audience-panel{padding:0;border-radius:0}.audience-grid{grid-template-columns:1fr;gap:12px;border-radius:0}.audience-item,.audience-item:nth-child(2),.audience-item:last-child{display:flex;align-items:stretch;min-height:126px;padding:0;border-radius:18px}.audience-media{flex:0 0 39%;width:39%;aspect-ratio:auto;min-height:126px}.audience-media img{height:100%}.audience-body{flex:1;display:flex;min-width:0;flex-direction:column;justify-content:center;padding:17px 16px}.audience-body h3{font-size:15px;margin-bottom:7px}.audience-body p{font-size:11px;line-height:1.55}}
+    .menu-toggle{display:none;width:42px;height:42px;padding:0;border:1px solid rgba(15,29,49,.12);border-radius:12px;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;box-shadow:0 8px 22px rgba(20,29,43,.08)}.menu-toggle span{width:19px;height:2px;border-radius:2px;background:#111827;transition:.25s ease}
+    .mobile-menu{position:fixed;z-index:100;inset:0;display:flex;align-items:flex-start;justify-content:center;padding:82px 14px 20px;background:rgba(8,14,24,.52);backdrop-filter:blur(13px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}.mobile-menu.open{opacity:1;visibility:visible}.mobile-menu-panel{width:min(100%,430px);padding:18px;border:1px solid rgba(255,255,255,.7);border-radius:24px;background:rgba(255,255,255,.96);box-shadow:0 30px 90px rgba(8,14,24,.3);transform:translateY(-12px) scale(.98);transition:transform .3s cubic-bezier(.2,.8,.2,1)}.mobile-menu.open .mobile-menu-panel{transform:translateY(0) scale(1)}.mobile-menu-head{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 14px;border-bottom:1px solid rgba(15,29,49,.09)}.mobile-menu-head strong{font-size:14px}.menu-close{width:36px;height:36px;border:1px solid rgba(15,29,49,.1);border-radius:11px;background:#f6f4ef;color:#111827;font-size:21px;cursor:pointer}.mobile-menu-links{display:grid;gap:5px;padding:14px 0}.mobile-menu-links a{padding:13px 14px;border-radius:12px;color:#253044;font-size:14px;font-weight:600}.mobile-menu-links a:hover{background:#f7f3e8;color:#9a6800}.mobile-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding-top:13px;border-top:1px solid rgba(15,29,49,.09)}.mobile-menu-actions .btn{width:100%}.menu-open{overflow:hidden}
+    .offers-actions{display:flex;justify-content:center;margin-top:32px}
+    .section{padding:60px 0}.cta{padding-bottom:60px}.audience{padding:60px 0;background:linear-gradient(135deg,#ff9d00 0%,#ffc400 52%,#ffe27a 100%)}.audience-head p{color:#5d4314}.audience .eyebrow{background:rgba(255,255,255,.38);border-color:rgba(255,255,255,.48);color:#3f2b00}.audience .gradient-text{background:linear-gradient(112deg,#111827,#654400 72%);-webkit-background-clip:text;background-clip:text;color:transparent}.audience-item{box-shadow:0 18px 42px rgba(105,62,0,.12)}
+    .slider-track{width:300%}.slide{width:33.333333%}.slider-controls{align-items:center}.slider-pages{display:flex;align-items:center;gap:3px;padding:3px;border:1px solid rgba(15,29,49,.09);border-radius:999px;background:rgba(255,255,255,.72)}.page-number{width:31px;height:31px;padding:0;border:0;border-radius:50%;background:transparent;color:#697386;font:600 11px "Be Vietnam Pro",sans-serif;cursor:pointer;transition:.2s ease}.page-number:hover{color:#9a6800}.page-number.active{background:linear-gradient(135deg,#ffe27a,#ffad00);color:#2b1d00;box-shadow:0 7px 18px rgba(255,171,0,.24)}
+    .blog-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr);align-items:stretch}.article.featured{height:100%;display:flex;flex-direction:column}.article.featured .article-cover{height:300px}.article.featured .article-copy{flex:1}.blog-side-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.blog-side-grid .article{min-width:0}.blog-side-grid .article-cover{height:124px}.blog-side-grid .article-copy{padding:16px 17px 18px}.blog-side-grid .article-copy small{font-size:9px}.blog-side-grid .article-copy h3{font-size:13px;line-height:1.42;margin:7px 0}.blog-side-grid .article-copy p{font-size:10px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    @media(max-width:980px){.blog-grid{grid-template-columns:1fr}.article.featured{grid-column:auto}.blog-side-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:680px){.blog-side-grid{grid-template-columns:1fr}.blog-side-grid .article-cover{height:170px}}
+    @media(max-width:680px){header nav{height:58px;padding:0 8px 0 12px}.nav-actions{display:none}.menu-toggle{display:flex}.section{padding:52px 0}.audience{padding:52px 0}.hero{min-height:1130px}.hero-visual{height:492px;margin-top:82px}.dashboard{height:auto;bottom:0;padding:12px 12px 14px;overflow:hidden}.dash-top{height:40px}.dash-stats{grid-template-columns:1fr 1fr}.dashboard .metric{padding:10px 12px}.dashboard .metric strong{font-size:16px}.dashboard .metric:first-child strong{font-size:20px}.chart-card{height:220px}.bars{height:164px;padding-top:14px}.bar-track{height:116px}.offer-head{display:block}.slider-controls{margin-top:20px;justify-content:flex-end}.round-btn{width:38px;height:38px}.page-number{width:27px;height:27px}.slide{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.campaign:nth-child(n+3){display:block}.campaign:nth-child(n+5){display:none}.campaign{padding:11px;border-radius:16px}.brand-box{height:76px;border-radius:11px}.brand-box .demo-logo{font-size:15px;padding:8px}.campaign h3{font-size:11px;margin:12px 0 8px}.campaign .label{font-size:8px}.commission{font-size:15px;margin-bottom:11px}.detail{font-size:10px}.offers-actions{margin-top:24px}.offers-actions .btn{width:100%}}
+
+    /* Option A — dark kinetic direction inspired by Vivid Motion. */
+    :root{--ink:#050505;--ink-2:#090909;--surface:#101010;--surface-2:#151515;--line:rgba(255,255,255,.12);--muted:#9d9d9d;--white:#f7f4ec;--shadow:0 38px 110px rgba(0,0,0,.58)}
+    html{background:#050505}body{background:#050505;color:var(--white)}
+    body:before{opacity:.28;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000 0 65%,transparent)}
+    body:after{content:"";position:fixed;z-index:90;left:var(--cursor-x,-120px);top:var(--cursor-y,-120px);width:280px;height:280px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.095),transparent 68%);pointer-events:none;mix-blend-mode:screen}
+    .gradient-text{background:linear-gradient(112deg,#fff 0%,#ffe88a 45%,#ff9d00 92%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .eyebrow{color:#ffe997;background:rgba(255,196,0,.08);border-color:rgba(255,210,73,.26)}
+    header{background:linear-gradient(to bottom,rgba(5,5,5,.96),rgba(5,5,5,.72),transparent)}
+    nav{border-color:rgba(255,255,255,.12);background:rgba(10,10,10,.72);box-shadow:0 14px 50px rgba(0,0,0,.32)}
+    .nav-links{color:#a7a7a7}.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--gold);transition:right .35s cubic-bezier(.2,.8,.2,1)}.nav-links a:hover{color:#fff}.nav-links a:hover:after{right:0}
+    .btn-ghost{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.045);color:#fff}.btn-ghost:hover{background:rgba(255,196,0,.08)}
+    .hero{min-height:1120px;padding-top:205px;background:radial-gradient(circle at 73% 21%,rgba(255,170,0,.16),transparent 27%),radial-gradient(circle at 8% 52%,rgba(255,196,0,.055),transparent 27%),#050505}
+    .hero:before{left:74%;background:radial-gradient(circle,rgba(255,196,0,.14),transparent 68%);filter:blur(18px)}
+    .hero:after{height:310px;background:linear-gradient(to bottom,transparent,#050505 96%)}
+    .hero-art{opacity:.76;filter:saturate(1.08) contrast(1.08);mask-image:linear-gradient(90deg,transparent 0,#000 28%,#000 90%,transparent)}
+    .hero-art:after{background:linear-gradient(90deg,#050505 0,rgba(5,5,5,.72) 17%,transparent 45%),linear-gradient(to bottom,transparent 52%,rgba(5,5,5,.32) 72%,#050505 100%)}
+    .hero h1{color:#fff;text-shadow:none;letter-spacing:-.065em}.hero .lead{color:#aaa}
+    #matrixCanvas{opacity:.65}
+    .dashboard{background:#0b0d11;border-color:rgba(255,210,73,.26);box-shadow:0 50px 130px rgba(0,0,0,.72),0 0 70px rgba(255,184,0,.1)}
+    .numbers-wrap{margin-top:-30px}.numbers-wrap:before{background:radial-gradient(circle at 50% 0,rgba(255,196,0,.15),transparent 70%)}
+    .numbers{border-color:rgba(255,255,255,.11);background:rgba(14,14,14,.84);box-shadow:0 30px 85px rgba(0,0,0,.4)}.number{border-color:rgba(255,255,255,.1)}.number span{color:#909090}
+    .audience{background:radial-gradient(circle at 28% 100%,rgba(255,196,0,.14),transparent 36%),radial-gradient(circle at 80% 8%,rgba(255,157,0,.09),transparent 30%),#080808}.audience-head p{color:#999}.audience .eyebrow{background:rgba(255,196,0,.08);border-color:rgba(255,210,73,.25);color:#ffe58b}.audience .gradient-text{background:linear-gradient(112deg,#fff,#ffe16b 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .audience-item,.audience-item:nth-child(2),.audience-item:last-child{border-color:rgba(255,255,255,.11);background:#111;box-shadow:0 22px 60px rgba(0,0,0,.32)}.audience-body h3{color:#fff}.audience-body p{color:#959595}
+    .offers{background:radial-gradient(circle at 83% 24%,rgba(255,196,0,.075),transparent 28%),#050505}.round-btn{border-color:rgba(255,255,255,.12);background:#111;color:#fff}.slider-pages{border-color:rgba(255,255,255,.1);background:#101010}.page-number{color:#888}
+    .campaign{border-color:rgba(255,255,255,.1);background:linear-gradient(150deg,#151515,#0b0b0b);box-shadow:0 20px 55px rgba(0,0,0,.32)}.campaign h3,.detail{color:#fff}.commission{color:#ffe178}.brand-box{background:radial-gradient(circle at 50% 12%,#262626,#0b0b0b 65%)}
+    #ecosystem{background:radial-gradient(circle at 12% 55%,rgba(255,196,0,.07),transparent 28%),#080808}.eco-visual{background:radial-gradient(circle at 50% 40%,rgba(255,196,0,.15),transparent 36%),linear-gradient(145deg,#141414,#070707)}.feature{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.025)}.feature p{color:#c0c0c0}.eco-note{color:#fff}
+    .testimonials{background:radial-gradient(circle at 70% 30%,rgba(255,196,0,.13),transparent 32%),#050505}.testimonials:before{border-color:rgba(255,196,0,.16)}.testimonials .eyebrow{color:#ffe997;background:rgba(255,196,0,.08);border-color:rgba(255,210,73,.24)}.testimonials .gradient-text{background:linear-gradient(112deg,#fff,#ffe16b 74%);-webkit-background-clip:text;background-clip:text;color:transparent}.testimonials .quote{background:linear-gradient(150deg,#161616,#0c0c0c);border-color:rgba(255,255,255,.1);box-shadow:0 26px 70px rgba(0,0,0,.34)}.testimonials .quote-text{color:#d0d0d0}.testimonials .user small{color:#858585}
+    #blog{background:#080808}.article{border-color:rgba(255,255,255,.1);background:#111;box-shadow:0 18px 55px rgba(0,0,0,.28)}.article-copy h3{color:#fff}.article-copy small{color:#ffbd28}
+    .cta{background:#080808}.cta-box{background:radial-gradient(circle at 50% 120%,rgba(255,196,0,.22),transparent 55%),linear-gradient(145deg,#171717,#080808)}
+    footer{background:#030303}.mobile-menu-panel{background:#0e0e0e;border-color:rgba(255,255,255,.14);color:#fff}.mobile-menu-head{border-color:rgba(255,255,255,.1)}.menu-close,.menu-toggle{background:#111;color:#fff;border-color:rgba(255,255,255,.13)}.menu-toggle span{background:#fff}.mobile-menu-links a{color:#ddd}.mobile-menu-links a:hover{background:rgba(255,196,0,.08);color:#ffe16b}.mobile-menu-actions{border-color:rgba(255,255,255,.1)}
+
+    .casino-float{position:absolute;z-index:3;pointer-events:none;will-change:transform;filter:drop-shadow(0 24px 24px rgba(0,0,0,.45));transform-style:preserve-3d}
+    .casino-chip{right:7%;top:310px;width:96px;height:96px;border-radius:50%;background:repeating-conic-gradient(#ffc400 0 12deg,#fff3ae 12deg 22deg,#d58400 22deg 38deg);box-shadow:inset 0 0 0 9px #121212,inset 0 0 0 14px #ffc400,0 0 40px rgba(255,196,0,.25);animation:chipFloat 7s ease-in-out infinite}
+    .casino-chip:after{content:"X";position:absolute;inset:27px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 32% 25%,#ffeaa0,#ff9d00 72%);color:#14100a;font-weight:900;font-size:22px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)}
+    .casino-card{right:1.5%;top:520px;width:112px;height:158px;border-radius:14px;background:linear-gradient(145deg,#fff9e8,#ddd4bb);border:1px solid #fff;box-shadow:inset 0 0 0 7px #1b1b1b,inset 0 0 0 9px #ffbd00;transform:rotate(13deg);animation:cardFloat 9s ease-in-out infinite}
+    .casino-card:before,.casino-card:after{content:"♠";position:absolute;color:#111;font:800 30px Georgia,serif}.casino-card:before{left:17px;top:15px}.casino-card:after{right:17px;bottom:15px;transform:rotate(180deg)}
+    .casino-dice{left:4%;top:560px;width:76px;height:76px;border-radius:18px;background:linear-gradient(145deg,#ffe680,#ff9d00);box-shadow:inset 10px 10px 20px rgba(255,255,255,.34),inset -10px -12px 20px rgba(74,35,0,.3);transform:rotate(-17deg);animation:diceFloat 8s ease-in-out infinite}
+    .casino-dice:after{content:"";position:absolute;width:11px;height:11px;left:16px;top:16px;border-radius:50%;background:#15100b;box-shadow:33px 0 #15100b,16px 16px #15100b,0 33px #15100b,33px 33px #15100b}
+    .casino-coin{left:8%;top:285px;width:68px;height:68px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#fff0a0,#ffbf00 44%,#a95c00 75%);box-shadow:inset 0 0 0 5px rgba(255,255,255,.26),0 0 36px rgba(255,196,0,.22);animation:coinFloat 6.5s ease-in-out infinite}
+    .casino-coin:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#5b3300;font-size:25px}
+    @keyframes chipFloat{0%,100%{transform:translate3d(0,0,0) rotateX(58deg) rotateZ(0)}50%{transform:translate3d(-18px,-34px,60px) rotateX(67deg) rotateZ(150deg)}}
+    @keyframes cardFloat{0%,100%{transform:translate3d(0,0,0) rotate(13deg) rotateY(-10deg)}50%{transform:translate3d(-20px,-42px,55px) rotate(4deg) rotateY(17deg)}}
+    @keyframes diceFloat{0%,100%{transform:translate3d(0,0,0) rotate(-17deg)}50%{transform:translate3d(22px,-35px,50px) rotate(20deg)}}
+    @keyframes coinFloat{0%,100%{transform:translate3d(0,0,0) rotateY(0)}50%{transform:translate3d(14px,-28px,42px) rotateY(180deg)}}
+
+    [data-reveal]{opacity:0;transform:translateY(48px);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1)}[data-reveal].is-visible{opacity:1;transform:translateY(0)}
+    .parallax-media{will-change:transform;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04)}
+    .motion-line{position:fixed;z-index:80;left:0;top:0;width:100%;height:2px;transform-origin:left;background:linear-gradient(90deg,#ff9d00,#ffe477);transform:scaleX(var(--scroll-progress,0));pointer-events:none}
+    @media(max-width:980px){.casino-card{right:-30px}.casino-chip{right:3%}.casino-dice{left:1%}.casino-coin{left:3%}}
+    @media(max-width:680px){body:after{display:none}.hero{min-height:1130px}.hero-art{opacity:.27}.casino-float{opacity:.64;scale:.72}.casino-chip{top:390px;right:-10px}.casino-card{top:545px;right:-30px}.casino-dice{top:530px;left:-16px}.casino-coin{top:355px;left:8px}.audience-item,.audience-item:nth-child(2),.audience-item:last-child{border-color:rgba(255,255,255,.11)}.slider-controls{justify-content:flex-start}.motion-line{height:1px}}
+    @media(prefers-reduced-motion:reduce){.casino-float,.eco-ring,.eco-satellite,.eco-bubble,.bar-fill{animation:none!important}[data-reveal]{opacity:1;transform:none;transition:none}.parallax-media{transform:none}}
+  </style>
+</head>
+<body>
+  <div class="motion-line" aria-hidden="true"></div>
+  <header>
+    <div class="container"><nav>
+      <a class="logo-shell" href="#"><img src="../x-filiate-logo.png" alt="X-Filiate"></a>
+      <div class="nav-links"><a href="#offers">Chương Trình</a><a href="#offers">Ưu Đãi</a><a href="#ecosystem">Về Chúng tôi</a><a href="#blog">Blog</a><a href="#ecosystem">Hệ Sinh Thái ▾</a></div>
+      <div class="nav-actions"><a class="btn btn-ghost" href="#">Đăng nhập</a><a class="btn btn-primary" href="#cta">Đăng ký</a></div>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav></div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Điều hướng X-Filiate">
+      <div class="mobile-menu-head"><strong>Khám phá X-Filiate</strong><button class="menu-close" id="menuClose" type="button" aria-label="Đóng menu">×</button></div>
+      <div class="mobile-menu-links"><a href="#offers">Chương Trình</a><a href="#offers">Ưu Đãi</a><a href="#ecosystem">Về Chúng tôi</a><a href="#blog">Blog</a><a href="#ecosystem">Hệ Sinh Thái</a></div>
+      <div class="mobile-menu-actions"><a class="btn btn-ghost" href="#">Đăng nhập</a><a class="btn btn-primary" href="#cta">Đăng ký</a></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="casino-float casino-chip" data-depth=".18" aria-hidden="true"></div>
+      <div class="casino-float casino-card" data-depth=".11" aria-hidden="true"></div>
+      <div class="casino-float casino-dice" data-depth=".15" aria-hidden="true"></div>
+      <div class="casino-float casino-coin" data-depth=".2" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow">Nền tảng Affiliate thế hệ mới</span>
+          <h1>Hệ thống Affiliate<br><span class="gradient-text">iGaming & Betting #1</span></h1>
+          <p class="lead">Kiếm tiền bền vững cùng X-Filiate với hệ sinh thái chiến dịch minh bạch, công nghệ theo dõi thời gian thực và đội ngũ luôn đồng hành cùng bạn.</p>
+          <div class="hero-actions"><a href="#cta" class="btn btn-primary">Bắt đầu kiếm tiền <span>→</span></a><a href="#offers" class="btn btn-ghost">Khám phá chiến dịch</a></div>
+        </div>
+        <div class="hero-visual">
+          <div class="dashboard">
+            <div class="dash-top"><div class="dash-brand"><span class="dash-brand-logo"><img src="../x-filiate-logo.png" alt="X-Filiate"></span><span class="dash-brand-label">Dashboard</span></div><span class="period-badge">LIVE · 6 THÁNG GẦN NHẤT</span></div>
+            <div class="dash-main">
+              <div class="dash-stats">
+                <div class="metric">Tổng doanh thu 6 tháng<strong>1.500 tỷ VNĐ</strong></div>
+                <div class="metric">Chuyển đổi thành công<strong>182.640</strong></div>
+                <div class="metric">Tăng trưởng kỳ này<strong style="color:#7ee2aa">+466,7%</strong></div>
+              </div>
+              <div class="revenue-panel">
+                <div class="chart-card">
+                  <div class="chart-header"><strong>Hiệu suất chiến dịch</strong><span>Đơn vị: tỷ VNĐ</span></div>
+                  <div class="bars">
+                    <div class="bar-col"><span class="bar-value">90</span><div class="bar-track"><div class="bar-fill" style="--h:18%"></div></div><small>T1</small></div>
+                    <div class="bar-col"><span class="bar-value">140</span><div class="bar-track"><div class="bar-fill" style="--h:27%"></div></div><small>T2</small></div>
+                    <div class="bar-col"><span class="bar-value">190</span><div class="bar-track"><div class="bar-fill" style="--h:37%"></div></div><small>T3</small></div>
+                    <div class="bar-col"><span class="bar-value">240</span><div class="bar-track"><div class="bar-fill" style="--h:47%"></div></div><small>T4</small></div>
+                    <div class="bar-col"><span class="bar-value">330</span><div class="bar-track"><div class="bar-fill" style="--h:65%"></div></div><small>T5</small></div>
+                    <div class="bar-col"><span class="bar-value">510</span><div class="bar-track"><div class="bar-fill" style="--h:100%"></div></div><small>T6</small></div>
+                  </div>
+                </div>
+                <div class="growth-card"><small>THÁNG BÙNG NỔ</small><strong class="big">510 tỷ</strong><p>Doanh thu tháng 6 cao gấp 5,7 lần tháng đầu.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers-wrap"><div class="container"><div class="numbers">
+      <div class="number"><strong>100+</strong><span>Nhà cái uy tín</span></div><div class="number"><strong>500+</strong><span>Chiến dịch đang chạy</span></div><div class="number"><strong>20K+</strong><span>Đối tác toàn quốc</span></div><div class="number"><strong>1,500 tỷ</strong><span>Hoa hồng đã chi trả</span></div>
+    </div></div></section>
+
+    <section class="audience" id="audience"><div class="container">
+      <div class="audience-head"><span class="eyebrow">Dành cho mọi mô hình</span><h2>X-Filiate phù hợp với <span class="gradient-text">cách bạn tăng trưởng</span></h2><p>Một nền tảng, đầy đủ công cụ cho publisher cá nhân, đội nhóm và hệ thống quy mô lớn.</p></div>
+      <div class="audience-panel"><div class="audience-grid">
+        <article class="audience-item"><div class="audience-media"><img src="../audience-seo.png" alt="Hệ thống landing page dành cho SEO Publisher"></div><div class="audience-body"><h3>SEO Publisher</h3><p>Hệ thống Landing Page tối ưu chuyển đổi.</p></div></article>
+        <article class="audience-item"><div class="audience-media"><img src="../audience-digital.png" alt="Hệ thống tracking dành cho Digital Marketer"></div><div class="audience-body"><h3>Digital Marketer</h3><p>Hệ thống Tracking Real-time chính xác. Minh bạch doanh thu.</p></div></article>
+        <article class="audience-item"><div class="audience-media"><img src="../audience-kol-koc.png" alt="Hệ sinh thái dành cho KOL và KOC"></div><div class="audience-body"><h3>KOL &amp; KOC</h3><p>Hoa hồng cạnh tranh nhất trong các ngành Affiliate.</p></div></article>
+        <article class="audience-item"><div class="audience-media"><img src="../audience-system-partner.png" alt="Kết nối API dành cho đối tác hệ thống"></div><div class="audience-body"><h3>Đối tác hệ thống</h3><p>API &amp; Postback linh hoạt cùng hệ sinh thái giúp bạn tăng trưởng.</p></div></article>
+      </div></div>
+    </div></section>
+
+    <section class="section offers" id="offers"><div class="container">
+      <div class="offer-head"><div class="section-intro" style="margin:0"><span class="eyebrow">Top Offers</span><h2 style="margin-top:17px">Ưu đãi <span class="gradient-text">nổi bật</span></h2><p>Những chiến dịch có hiệu suất và mức hoa hồng tốt nhất tuần này.</p></div><div class="slider-controls"><button class="round-btn" id="prev" aria-label="Trang trước">←</button><div class="slider-pages" aria-label="Chọn trang ưu đãi"><button class="page-number active" data-page="0" aria-current="page">1</button><button class="page-number" data-page="1">2</button><button class="page-number" data-page="2">3</button></div><button class="round-btn" id="next" aria-label="Trang sau">→</button></div></div>
+      <div class="slider-window"><div class="slider-track" id="track">
+        <div class="slide">
+          <article class="campaign"><div class="brand-box"><span class="demo-logo sunwin">SUNWIN</span></div><h3>Sunwin Premium</h3><span class="label">CPA / Hoa hồng</span><div class="commission">600.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><span class="demo-logo hitclub">HIT<em>CLUB</em></span></div><h3>HitClub Partner</h3><span class="label">CPA / Hoa hồng</span><div class="commission">580.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><span class="demo-logo bet86"><b>86</b>BET</span></div><h3>86Bet Sports</h3><span class="label">CPA / Hoa hồng</span><div class="commission">720.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><span class="demo-logo may88">MAY88</span></div><h3>May88 VIP</h3><span class="label">CPA / Hoa hồng</span><div class="commission">650.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><span class="demo-logo zowin">ZOWIN</span></div><h3>Zowin Affiliate</h3><span class="label">CPA / Hoa hồng</span><div class="commission">550.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+        </div>
+        <div class="slide">
+          <article class="campaign"><div class="brand-box"><b>MAX</b>BET</div><h3>MaxBet Pro</h3><span class="label">CPA / Hoa hồng</span><div class="commission">680.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box">ONE<b>88</b></div><h3>One88</h3><span class="label">CPA / Hoa hồng</span><div class="commission">620.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>LUCKY</b>9</div><h3>Lucky9</h3><span class="label">CPA / Hoa hồng</span><div class="commission">700.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box">V<b>SPORT</b></div><h3>VSport</h3><span class="label">CPA / Hoa hồng</span><div class="commission">590.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>ROYAL</b>X</div><h3>RoyalX</h3><span class="label">CPA / Hoa hồng</span><div class="commission">750.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+        </div>
+        <div class="slide">
+          <article class="campaign"><div class="brand-box"><b>W</b>88</div><h3>W88 Partner</h3><span class="label">CPA / Hoa hồng</span><div class="commission">690.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>BK</b>8</div><h3>BK8 Premium</h3><span class="label">CPA / Hoa hồng</span><div class="commission">640.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>KU</b>BET</div><h3>KUBET Affiliate</h3><span class="label">CPA / Hoa hồng</span><div class="commission">710.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>M</b>88</div><h3>M88 Sports</h3><span class="label">CPA / Hoa hồng</span><div class="commission">630.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+          <article class="campaign"><div class="brand-box"><b>789</b>BET</div><h3>789Bet</h3><span class="label">CPA / Hoa hồng</span><div class="commission">730.000đ</div><a class="detail" href="#">Chi tiết <span>→</span></a></article>
+        </div>
+      </div></div>
+      <div class="offers-actions"><a href="#" class="btn btn-ghost">Xem tất cả chương trình <span>→</span></a></div>
+    </div></section>
+
+    <section class="section" id="ecosystem"><div class="container"><div class="ecosystem-grid">
+      <div class="eco-visual">
+        <div class="eco-ring"></div>
+        <div class="eco-satellite" aria-hidden="true"><span></span></div>
+        <div class="eco-core"><img src="../x-symbol.png" alt="Biểu tượng X-Filiate"></div>
+        <div class="eco-bubble bubble-1">500+ chiến dịch</div>
+        <div class="eco-bubble bubble-2">Tracking 99,9%</div>
+        <div class="eco-bubble bubble-3">Thanh toán linh hoạt</div>
+        <div class="eco-bubble bubble-4">Support 24/7</div>
+        <div class="eco-bubble bubble-5">Affiliate Academy</div>
+        <div class="eco-bubble bubble-6">Cộng đồng 20K+</div>
+        <div class="eco-bubble bubble-7">Bảo mật hiện đại</div>
+      </div>
+      <div><span class="eyebrow">Hệ sinh thái X-Filiate</span><h2 style="margin-top:18px">Đồng hành từ <span class="gradient-text">ngày đầu tiên</span></h2><p style="color:var(--muted)">Đội ngũ hỗ trợ tận tâm giúp bạn kiếm tiền ngay khi bắt đầu, kể cả khi chưa có kinh nghiệm.</p>
+        <div class="feature-list"><div class="feature"><span class="check">✓</span><p>Thiết lập tài khoản và link affiliate cá nhân hoá</p></div><div class="feature"><span class="check">✓</span><p>Cộng đồng Affiliate năng động, chia sẻ kinh nghiệm thực tế</p></div><div class="feature"><span class="check">✓</span><p>Lớp học khởi động nhanh — hiểu hệ thống trong 60 phút</p></div><div class="feature"><span class="check">✓</span><p>Hệ thống hỗ trợ phát triển site và tăng doanh thu</p></div></div>
+        <p class="eco-note">Nhanh chóng. Gọn gàng. Hiệu quả ngay từ bước đầu.</p><a href="#cta" class="btn btn-primary">Đăng ký ngay <span>→</span></a>
+      </div>
+    </div></div></section>
+
+    <section class="section testimonials"><div class="container"><div class="section-intro center"><span class="eyebrow">Đối tác nói gì</span><h2 style="margin-top:18px">Thành công được tạo nên <span class="gradient-text">cùng nhau</span></h2></div><div class="testimonial-grid">
+      <article class="quote"><div class="stars">★★★★★</div><p class="quote-text">“Dashboard trực quan và số liệu cập nhật rất nhanh. Chỉ sau hai tháng, doanh thu của team mình đã tăng hơn 40%.”</p><div class="user"><div class="avatar">MN</div><div><strong>Minh Nguyễn</strong><small>Performance Publisher</small></div></div></article>
+      <article class="quote"><div class="stars">★★★★★</div><p class="quote-text">“Điểm mình đánh giá cao nhất là đội ngũ support hiểu nghề. Mỗi chiến dịch đều được tư vấn rất sát với tệp traffic.”</p><div class="user"><div class="avatar">HL</div><div><strong>Hà Linh</strong><small>Affiliate Creator</small></div></div></article>
+      <article class="quote"><div class="stars">★★★★★</div><p class="quote-text">“Thanh toán đúng hẹn, tracking minh bạch và nhiều campaign tốt. Đây là network mình ưu tiên hợp tác lâu dài.”</p><div class="user"><div class="avatar">TK</div><div><strong>Tuấn Khang</strong><small>SEO Publisher</small></div></div></article>
+    </div></div></section>
+
+    <section class="section" id="blog"><div class="container"><div class="section-intro"><span class="eyebrow">Học viện Affiliate</span><h2 style="margin-top:18px">Kiến thức giúp bạn <span class="gradient-text">tăng trưởng</span></h2><p>Hướng dẫn thực chiến, dễ áp dụng cho cả người mới và publisher chuyên nghiệp.</p></div><div class="blog-grid">
+      <article class="article featured"><div class="article-cover" style="background-image:url('../blog-affiliate-roadmap.png')"></div><div class="article-copy"><small>Cẩm nang bắt đầu · 8 phút</small><h3>Affiliate Marketing là gì? Lộ trình tạo thu nhập bền vững năm 2026</h3><p>Từ cách chọn chiến dịch đến tối ưu chuyển đổi cho traffic đầu tiên.</p></div></article>
+      <div class="blog-side-grid">
+        <article class="article"><div class="article-cover" style="background-image:url('../blog-conversion-rate.png')"></div><div class="article-copy"><small>Tối ưu chuyển đổi</small><h3>5 cách tăng CR cho landing page Betting</h3><p>Những thay đổi nhỏ tạo ra khác biệt lớn.</p></div></article>
+        <article class="article"><div class="article-cover" style="background-image:url('../blog-case-study-growth.png')"></div><div class="article-copy"><small>Case study</small><h3>Từ 0 đến 100 triệu hoa hồng mỗi tháng</h3><p>Chiến lược thực tế từ publisher X-Filiate.</p></div></article>
+        <article class="article"><div class="article-cover" style="background-image:url('../blog-traffic-sources.png')"></div><div class="article-copy"><small>Traffic Strategy</small><h3>7 nguồn traffic Affiliate hiệu quả cho người mới</h3><p>Xây dựng hệ thống traffic đa kênh và giảm phụ thuộc vào một nền tảng.</p></div></article>
+        <article class="article"><div class="article-cover" style="background-image:url('../blog-epc-performance.png')"></div><div class="article-copy"><small>Performance</small><h3>Cách tối ưu EPC và hiệu suất chiến dịch mỗi tuần</h3><p>Đọc đúng dữ liệu để ưu tiên chiến dịch mang lại lợi nhuận cao hơn.</p></div></article>
+      </div>
+    </div><div class="blog-actions"><a href="#" class="btn btn-ghost">Xem tất cả <span>→</span></a></div></div></section>
+
+    <section class="cta" id="cta"><div class="container"><div class="cta-box"><span class="eyebrow">Sẵn sàng tăng trưởng?</span><h2 style="margin-top:20px">Biến traffic thành <span class="gradient-text">doanh thu bền vững</span></h2><p>Tham gia cùng hơn 20.000 đối tác và bắt đầu chiến dịch đầu tiên của bạn ngay hôm nay.</p><a href="#" class="btn btn-primary">Tạo tài khoản miễn phí <span>→</span></a></div></div></section>
+  </main>
+
+  <footer><div class="container"><div class="footer-grid"><div><a class="logo-shell" href="#"><img src="../x-filiate-logo.png" alt="X-Filiate"></a><p class="footer-copy">Nền tảng Affiliate iGaming & Betting tiên phong, kết nối publisher với những chiến dịch chất lượng và minh bạch.</p></div><div class="footer-col"><h4>Chương trình</h4><a href="#">Chiến dịch mới</a><a href="#">Top ưu đãi</a><a href="#">Bảng hoa hồng</a></div><div class="footer-col"><h4>Hỗ trợ</h4><a href="#">Trung tâm trợ giúp</a><a href="#">Hướng dẫn</a><a href="#">Liên hệ</a></div><div class="footer-col"><h4>Pháp lý</h4><a href="#">Điều khoản</a><a href="#">Bảo mật</a><a href="#">Thanh toán</a></div></div><div class="copyright"><span>© 2026 X-Filiate. All rights reserved.</span><span>Affiliate smarter. Grow further.</span></div></div></footer>
+
+  <a class="support" href="#" aria-label="Chat với hỗ trợ"><span class="support-dot">✦</span><span>Chat với Support</span></a>
+  <script>
+    const track=document.getElementById('track');let page=0;
+    const pageButtons=[...document.querySelectorAll('.page-number')];
+    function showOfferPage(nextPage){
+      page=Math.max(0,Math.min(2,nextPage));
+      track.style.transform=`translateX(-${page*33.333333}%)`;
+      pageButtons.forEach((button,index)=>{
+        button.classList.toggle('active',index===page);
+        if(index===page)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+      });
+    }
+    document.getElementById('next').onclick=()=>showOfferPage(page+1);
+    document.getElementById('prev').onclick=()=>showOfferPage(page-1);
+    pageButtons.forEach(button=>button.addEventListener('click',()=>showOfferPage(Number(button.dataset.page))));
+
+    // Lightweight animated data matrix for the hero — no external library required.
+    const canvas=document.getElementById('matrixCanvas');
+    const ctx=canvas.getContext('2d');
+    let cw=0,ch=0,dpr=1,particles=[];
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function resizeMatrix(){
+      dpr=Math.min(window.devicePixelRatio||1,2);cw=canvas.clientWidth;ch=canvas.clientHeight;
+      canvas.width=cw*dpr;canvas.height=ch*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      particles=Array.from({length:48},(_,i)=>({x:Math.random()*cw,y:Math.random()*ch*.72,s:1+Math.random()*2,v:.12+Math.random()*.32,p:i*.7}));
+    }
+    function drawMatrix(ms){
+      const t=ms*.00035;ctx.clearRect(0,0,cw,ch);
+      const vx=cw*.72,hy=ch*.17;
+      ctx.lineWidth=1;
+      for(let i=-8;i<=16;i++){
+        const bx=i*(cw/12);ctx.beginPath();ctx.moveTo(vx,hy);ctx.lineTo(bx,ch);ctx.strokeStyle='rgba(170,119,0,.10)';ctx.stroke();
+      }
+      for(let i=0;i<16;i++){
+        const p=((i/16+t)%1);const eased=p*p;const y=hy+(ch-hy)*eased;
+        ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(cw,y);ctx.strokeStyle=`rgba(184,128,0,${.035+p*.09})`;ctx.stroke();
+      }
+      particles.forEach((o)=>{
+        o.y-=o.v;if(o.y<-8){o.y=ch*.75;o.x=Math.random()*cw}
+        const pulse=.45+.55*Math.sin(t*8+o.p);ctx.beginPath();ctx.arc(o.x,o.y,o.s*pulse,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,172,0,${.16+.34*pulse})`;ctx.fill();
+      });
+      if(!reduced)requestAnimationFrame(drawMatrix);
+    }
+    window.addEventListener('resize',resizeMatrix,{passive:true});resizeMatrix();requestAnimationFrame(drawMatrix);
+
+    const ecosystemCard=document.querySelector('.eco-visual');
+    const canTilt=window.matchMedia('(pointer:fine)').matches&&!reduced;
+    if(ecosystemCard&&canTilt){
+      ecosystemCard.addEventListener('pointermove',(event)=>{
+        const bounds=ecosystemCard.getBoundingClientRect();
+        const x=(event.clientX-bounds.left)/bounds.width;
+        const y=(event.clientY-bounds.top)/bounds.height;
+        const rotateX=(.5-y)*9;
+        const rotateY=(x-.5)*11;
+        ecosystemCard.style.transition='transform .09s linear, box-shadow .25s ease';
+        ecosystemCard.style.transform=`perspective(950px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+        ecosystemCard.style.setProperty('--mx',`${x*100}%`);
+        ecosystemCard.style.setProperty('--my',`${y*100}%`);
+      });
+      ecosystemCard.addEventListener('pointerleave',()=>{
+        ecosystemCard.style.transition='transform .55s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease';
+        ecosystemCard.style.transform='perspective(950px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+        ecosystemCard.style.setProperty('--mx','50%');
+        ecosystemCard.style.setProperty('--my','45%');
+      });
+    }
+
+    const menuToggle=document.getElementById('menuToggle');
+    const mobileMenu=document.getElementById('mobileMenu');
+    const menuClose=document.getElementById('menuClose');
+    function setMobileMenu(open){
+      mobileMenu.classList.toggle('open',open);
+      mobileMenu.setAttribute('aria-hidden',String(!open));
+      menuToggle.setAttribute('aria-expanded',String(open));
+      document.body.classList.toggle('menu-open',open);
+      if(open)menuClose.focus();
+    }
+    menuToggle.addEventListener('click',()=>setMobileMenu(true));
+    menuClose.addEventListener('click',()=>setMobileMenu(false));
+    mobileMenu.addEventListener('click',(event)=>{if(event.target===mobileMenu)setMobileMenu(false)});
+    mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMobileMenu(false)));
+    document.addEventListener('keydown',(event)=>{if(event.key==='Escape'&&mobileMenu.classList.contains('open'))setMobileMenu(false)});
+
+    // Kinetic scroll system: reveal, depth parallax and cursor response.
+    const revealTargets=[
+      ...document.querySelectorAll('.section-intro,.audience-head,.numbers,.campaign,.eco-visual,.feature,.quote,.article,.cta-box,.footer-grid')
+    ];
+    revealTargets.forEach((element,index)=>{
+      element.dataset.reveal='';
+      element.style.transitionDelay=`${Math.min(index%5,4)*55}ms`;
+    });
+    if('IntersectionObserver' in window&&!reduced){
+      const revealObserver=new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}
+        });
+      },{threshold:.12,rootMargin:'0px 0px -7%'});
+      revealTargets.forEach(element=>revealObserver.observe(element));
+    }else revealTargets.forEach(element=>element.classList.add('is-visible'));
+
+    const parallaxImages=[...document.querySelectorAll('.audience-media img,.article-cover')];
+    parallaxImages.forEach(element=>element.classList.add('parallax-media'));
+    const depthObjects=[...document.querySelectorAll('[data-depth]')];
+    let ticking=false;
+    function updateMotion(){
+      const scrollY=window.scrollY||0;
+      const maxScroll=Math.max(document.documentElement.scrollHeight-innerHeight,1);
+      document.documentElement.style.setProperty('--scroll-progress',String(scrollY/maxScroll));
+      if(!reduced){
+        parallaxImages.forEach(element=>{
+          const rect=element.getBoundingClientRect();
+          const center=rect.top+rect.height/2-innerHeight/2;
+          element.style.setProperty('--parallax-y',`${Math.max(-26,Math.min(26,-center*.035))}px`);
+        });
+        depthObjects.forEach(element=>{
+          const depth=Number(element.dataset.depth||0);
+          element.style.translate=`0 ${scrollY*depth*.28}px`;
+        });
+      }
+      ticking=false;
+    }
+    window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateMotion)}},{passive:true});
+    updateMotion();
+
+    if(window.matchMedia('(pointer:fine)').matches&&!reduced){
+      window.addEventListener('pointermove',(event)=>{
+        document.documentElement.style.setProperty('--cursor-x',`${event.clientX}px`);
+        document.documentElement.style.setProperty('--cursor-y',`${event.clientY}px`);
+      },{passive:true});
+      document.querySelectorAll('.btn,.round-btn,.page-number').forEach(button=>{
+        button.addEventListener('pointermove',(event)=>{
+          const rect=button.getBoundingClientRect();
+          const x=(event.clientX-rect.left-rect.width/2)*.13;
+          const y=(event.clientY-rect.top-rect.height/2)*.13;
+          button.style.transform=`translate3d(${x}px,${y}px,0)`;
+        });
+        button.addEventListener('pointerleave',()=>{button.style.transform=''})
+      });
+    }
+  </script>
+</body>
+</html>
