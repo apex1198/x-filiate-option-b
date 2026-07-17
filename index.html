@@ -283,6 +283,17 @@
     h4{font-size:15px;font-weight:700;line-height:1.4}h5{font-size:13px;font-weight:500;line-height:1.45}h6{font-size:12px;font-weight:500;line-height:1.45}
     .post.featured h3{font-size:20px;line-height:1.36}.post-side-grid .post-body h3{font-size:13px;line-height:1.42}.audience-copy h3{font-size:14px;line-height:1.38}
     @media(max-width:680px){h1,.hero-copy h1{font-size:35px;line-height:1.12;letter-spacing:-.01em}h2{font-size:clamp(24px,7.4vw,30px);line-height:1.24}h3{font-size:15px;line-height:1.42}.post.featured h3{font-size:18px}}
+
+    /* SECTION SURFACE REFINEMENT — local review version */
+    .metrics{padding:30px 0}
+    .metrics-title{margin:0 0 24px;color:#ffc400;text-align:center;font-size:clamp(24px,2.5vw,34px)}
+    .audience,.testimonials{position:relative;overflow:hidden;isolation:isolate;border-radius:0}
+    .audience:before,.testimonials:before{content:"";position:absolute;z-index:0;pointer-events:none;inset:0;opacity:.08;mix-blend-mode:overlay;background-image:linear-gradient(rgba(255,255,255,.92) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.92) 1px,transparent 1px);background-size:56px 56px}
+    .audience>.wrap,.testimonials>.wrap{position:relative;z-index:2}
+    .audience-head h2:after,.testimonials .section-head h2:after{display:none}
+    .audience-head .eyebrow,.testimonials .section-head .eyebrow{display:flex;width:max-content;margin-left:auto;margin-right:auto;padding:20px;justify-content:center;text-align:center}
+    .audience-head .eyebrow:before,.testimonials .section-head .eyebrow:before{display:none}
+    @media(max-width:680px){.metrics{padding:30px 0}.metrics-title{margin-bottom:20px}.audience,.testimonials{border-radius:0}}
   </style>
 </head>
 <body>
@@ -303,7 +314,7 @@
     </div></section>
     <div class="marquee-band" aria-hidden="true"><div class="marquee-track"><div class="marquee-item">Affiliate Smarter <span class="marquee-star"></span> Grow Further <span class="marquee-star"></span> Real-time Tracking <span class="marquee-star"></span> Premium Offers <span class="marquee-star"></span></div><div class="marquee-item">Affiliate Smarter <span class="marquee-star"></span> Grow Further <span class="marquee-star"></span> Real-time Tracking <span class="marquee-star"></span> Premium Offers <span class="marquee-star"></span></div></div></div>
 
-    <section class="metrics"><div class="wrap"><p class="eyebrow">Nền tảng được tin chọn</p><div class="metrics-grid"><div class="metric"><strong>100+</strong><span>Nhà cái uy tín</span></div><div class="metric"><strong>500+</strong><span>Chiến dịch đang chạy</span></div><div class="metric"><strong>20K+</strong><span>Đối tác toàn quốc</span></div><div class="metric"><strong>1,500 tỷ</strong><span>Hoa hồng đã chi trả</span></div></div></div></section>
+    <section class="metrics"><div class="wrap"><h2 class="metrics-title">Nền tảng được tin chọn</h2><div class="metrics-grid"><div class="metric"><strong>100+</strong><span>Nhà cái uy tín</span></div><div class="metric"><strong>500+</strong><span>Chiến dịch đang chạy</span></div><div class="metric"><strong>20K+</strong><span>Đối tác toàn quốc</span></div><div class="metric"><strong>1,500 tỷ</strong><span>Hoa hồng đã chi trả</span></div></div></div></section>
 
     <section class="audience" id="audience"><div class="wrap"><div class="audience-head"><p class="eyebrow">Dành cho mọi mô hình</p><h2>X-Filiate phù hợp với cách bạn tăng trưởng</h2><p>Một nền tảng, đầy đủ công cụ cho publisher cá nhân, đội nhóm và hệ thống quy mô lớn.</p></div><div class="audience-grid">
       <article class="audience-card"><img src="audience-seo.png" alt="SEO Publisher"><div class="audience-copy"><h3>SEO Publisher</h3><p>Hệ thống Landing Page tối ưu chuyển đổi.</p></div></article>
