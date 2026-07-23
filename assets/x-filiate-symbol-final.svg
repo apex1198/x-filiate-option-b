@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" role="img" aria-labelledby="title">
+  <title id="title">X-Filiate Symbol</title>
+  <defs>
+    <linearGradient id="brandGold" x1="20" y1="5" x2="178" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe870"/>
+      <stop offset=".42" stop-color="#ffc700"/>
+      <stop offset="1" stop-color="#ff9d00"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#brandGold)">
+    <polygon points="88.89 46.67 66.67 80 0 0 50 0 88.89 46.67"/>
+    <polygon points="200 180 150 180 97.3 116.76 129.73 95.68 200 180"/>
+    <polygon points="200 0 114.29 77.14 85.71 102.86 0 180 150 0 200 0"/>
+  </g>
+</svg>
