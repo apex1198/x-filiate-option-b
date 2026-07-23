@@ -22,9 +22,6 @@
   <meta name="twitter:title" content="Kiếm tiền bền vững cùng XFILIATE" />
   <meta name="twitter:description" content="Nền tảng Affiliate iGaming & Betting với hơn 500 chiến dịch và tracking minh bạch." />
   <meta name="twitter:image" content="https://apex1198.github.io/x-filiate-option-b/assets/xfiliate-social-preview.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     :root {
@@ -317,9 +314,8 @@
     .strategic-partners{position:relative;padding:64px 0 58px;overflow:hidden;color:#fff;background:radial-gradient(circle at 50% 0,rgba(255,196,0,.1),transparent 34%),#090c11;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
     .partner-heading{width:min(760px,calc(100% - 32px));margin:0 auto 34px;text-align:center}.partner-heading .eyebrow{color:#ffc400}.partner-heading h2{margin:14px 0 10px;color:#fff}.partner-heading p:last-child{margin:0;color:#9da4b0;font-size:14px}
     .partner-marquees{display:grid;gap:14px}.partner-row{position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-    .partner-track{--partner-loop:50%;display:flex;width:max-content;will-change:transform;animation:partnerScroll 46s linear infinite}.partner-row.reverse .partner-track{animation-name:partnerScrollReverse;animation-duration:50s}.partner-row:hover .partner-track{animation-play-state:paused}
+    .partner-track{display:flex;width:max-content;min-width:max-content;will-change:transform;transform:translate3d(0,0,0)}
     .partner-group{display:flex;flex:0 0 auto;gap:14px;padding-right:14px}.partner-logo{flex:0 0 184px;height:88px;display:grid;place-items:center;padding:13px 18px;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:#1c1d20;box-shadow:0 12px 28px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.05)}.partner-logo img{display:block;max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.26))}
-    @keyframes partnerScroll{to{transform:translate3d(calc(-1 * var(--partner-loop)),0,0)}}@keyframes partnerScrollReverse{from{transform:translate3d(calc(-1 * var(--partner-loop)),0,0)}to{transform:translate3d(0,0,0)}}
 
     /* REVENUE GUARANTEE / TRUST */
     .revenue-trust{position:relative;padding:70px 0;overflow:hidden;isolation:isolate;color:#fff;background:#090c11}.revenue-trust:before{content:"";position:absolute;z-index:-2;inset:0;opacity:.08;mix-blend-mode:overlay;background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:56px 56px}.revenue-trust:after{content:"";position:absolute;z-index:-1;width:520px;height:520px;right:-100px;top:50%;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.2),transparent 67%);filter:blur(16px)}
@@ -329,22 +325,31 @@
     .usdt-badge{position:relative;z-index:2;text-align:center}.usdt-coin{width:82px;height:82px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;color:#071a14;background:linear-gradient(145deg,#6affd3,#19b88a 56%,#087457);box-shadow:inset 0 0 0 7px rgba(255,255,255,.2),0 0 44px rgba(38,220,163,.25);font:900 34px/1 Arial,sans-serif}.usdt-badge small{display:block;margin-bottom:7px;color:#9da5b1;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.usdt-badge strong{display:block;color:#ffc400;font-family:"SVN Monument Extended","Be Vietnam Pro",sans-serif;font-size:clamp(30px,3.4vw,48px);line-height:1}.usdt-badge span{display:block;margin-top:8px;color:#fff;font-size:17px;font-weight:700;letter-spacing:.14em}.trust-status{position:absolute;z-index:3;right:18px;top:18px;display:flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid rgba(86,242,181,.22);border-radius:999px;color:#83f0c5;background:rgba(20,95,72,.18);font-size:9px;font-weight:800;letter-spacing:.08em}.trust-status:before{content:"";width:7px;height:7px;border-radius:50%;background:#55eba9;box-shadow:0 0 12px #55eba9}@keyframes trustSpin{to{transform:rotate(360deg)}}
     @media(max-width:980px){.trust-shell{grid-template-columns:1fr;padding:40px}.trust-proof{min-height:300px}.partner-logo{flex-basis:172px}}
     @media(max-width:680px){.strategic-partners{padding:48px 0 44px}.partner-heading{margin-bottom:26px}.partner-heading p:last-child{font-size:12px}.partner-marquees{gap:10px}.partner-group{gap:10px;padding-right:10px}.partner-logo{flex-basis:142px;height:72px;padding:10px 14px;border-radius:13px}.partner-logo img{max-height:49px}.partner-track{animation-duration:38s}.partner-row.reverse .partner-track{animation-duration:42s}.revenue-trust{padding:52px 0}.trust-shell{gap:30px;padding:26px 20px;border-radius:22px}.trust-copy{text-align:center}.trust-copy .eyebrow{margin-left:auto;margin-right:auto}.trust-copy h2{font-size:26px}.trust-copy .trust-lead{font-size:14px}.trust-signoff{padding:16px 0 0;border-left:0;border-top:2px solid #ffc400}.trust-proof{min-height:270px;padding:22px}.trust-proof:before{width:230px;height:230px}.trust-proof:after{width:185px;height:185px}.usdt-coin{width:70px;height:70px;font-size:29px}.trust-status{right:12px;top:12px}}
-    @media(prefers-reduced-motion:reduce){.partner-track,.trust-proof:after{animation:none!important}}
+    @media(prefers-reduced-motion:reduce){.trust-proof:after{animation:none!important}}
 
     /* HERO BACKGROUND VIDEO */
     .hero{overflow:hidden;isolation:isolate}.hero-video-bg{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.5;pointer-events:none}.hero>.hero-grid{position:relative;z-index:2}
     @media(prefers-reduced-motion:reduce){.hero-video-bg{display:none}}
 
     /* XFILIATE BRAND REFRESH — LOCAL */
-    html,body,button,input,textarea,select{font-family:"Ubuntu",Arial,sans-serif}
-    h1,h2,h3,h4,h5,h6,.hero-copy h1,.usdt-badge strong{font-family:"Ubuntu",Arial,sans-serif}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-Th.ttf") format("truetype");font-style:normal;font-weight:100;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-L.ttf") format("truetype");font-style:normal;font-weight:300;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-LI.ttf") format("truetype");font-style:italic;font-weight:300;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-R.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-RI.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-M.ttf") format("truetype");font-style:normal;font-weight:500 600;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-MI.ttf") format("truetype");font-style:italic;font-weight:500 600;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-B.ttf") format("truetype");font-style:normal;font-weight:700 900;font-display:swap}
+    @font-face{font-family:"Ubuntu Việt Hóa";src:url("assets/fonts/Ubuntu-BI.ttf") format("truetype");font-style:italic;font-weight:700 900;font-display:swap}
+    html,body,button,input,textarea,select{font-family:"Ubuntu Việt Hóa",Arial,sans-serif}
+    h1,h2,h3,h4,h5,h6,.hero-copy h1,.usdt-badge strong{font-family:"Ubuntu Việt Hóa",Arial,sans-serif}
     .logo,.footer-logo{padding:0;border:0;border-radius:0;background:transparent}
     .logo{width:196px;height:52px}.logo img,.footer-logo img{object-fit:contain;object-position:left center}
     .hero-proof{background:#07090d}
     .hero-brand-symbol{position:absolute;z-index:2;left:50%;top:42%;width:min(68%,390px);aspect-ratio:10/9;transform:translate(-50%,-50%) perspective(900px) rotateX(9deg) rotateY(-12deg);transform-style:preserve-3d;transform-origin:center;will-change:transform;transition:transform .18s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 34px 34px rgba(0,0,0,.58));pointer-events:none}
     .hero-brand-symbol:before,.hero-brand-symbol:after{display:none}
     .hero-brand-symbol img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:normal;filter:drop-shadow(0 28px 30px rgba(255,166,0,.28))}
-    .money-particle{position:fixed;z-index:9997;left:var(--px);top:var(--py);pointer-events:none;user-select:none;color:#ffc700;text-shadow:0 0 8px rgba(255,199,0,.9),0 0 20px rgba(255,150,0,.45);font:800 var(--ps)/1 "Ubuntu",Arial,sans-serif;transform:translate(-50%,-50%);animation:moneyParticleFall var(--life) cubic-bezier(.18,.7,.28,1) forwards}
+    .money-particle{position:fixed;z-index:9997;left:var(--px);top:var(--py);pointer-events:none;user-select:none;color:#ffc700;text-shadow:0 0 8px rgba(255,199,0,.9),0 0 20px rgba(255,150,0,.45);font:800 var(--ps)/1 "Ubuntu Việt Hóa",Arial,sans-serif;transform:translate(-50%,-50%);animation:moneyParticleFall var(--life) cubic-bezier(.18,.7,.28,1) forwards}
     @keyframes moneyParticleFall{0%{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(0deg)}12%{opacity:1;transform:translate(calc(-50% + var(--drift-start)),-65%) scale(1.08) rotate(8deg)}100%{opacity:0;transform:translate(calc(-50% + var(--drift)),calc(-50% + var(--fall))) scale(.72) rotate(var(--spin))}}
     .proof-label,.proof-card{z-index:4}
     .eco-core-b{width:132px;height:119px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;animation:ecoBrandFloat 4s ease-in-out infinite}
@@ -541,11 +546,28 @@
     addEventListener('load',()=>setTimeout(finishLoad,520),{once:true});setTimeout(finishLoad,1500);
 
     document.querySelectorAll('.partner-track').forEach(track=>{
-      const group=track.querySelector('.partner-group');
-      const syncPartnerLoop=()=>track.style.setProperty('--partner-loop',`${group.getBoundingClientRect().width}px`);
-      syncPartnerLoop();
-      new ResizeObserver(syncPartnerLoop).observe(group);
-      addEventListener('load',syncPartnerLoop,{once:true});
+      const row=track.closest('.partner-row');
+      const sourceGroup=track.querySelector('.partner-group');
+      while(track.children.length<3){
+        const clone=sourceGroup.cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        track.appendChild(clone);
+      }
+      if(reduceMotion)return;
+      let partnerAnimation;
+      const startPartnerLoop=()=>{
+        partnerAnimation?.cancel();
+        const distance=sourceGroup.offsetWidth;
+        const reverse=row.classList.contains('reverse');
+        const frames=reverse
+          ?[{transform:`translate3d(-${distance}px,0,0)`},{transform:'translate3d(0,0,0)'}]
+          :[{transform:'translate3d(0,0,0)'},{transform:`translate3d(-${distance}px,0,0)`}];
+        partnerAnimation=track.animate(frames,{duration:reverse?50000:46000,iterations:Infinity,easing:'linear'});
+      };
+      startPartnerLoop();
+      new ResizeObserver(startPartnerLoop).observe(sourceGroup);
+      row.addEventListener('pointerenter',()=>partnerAnimation?.pause());
+      row.addEventListener('pointerleave',()=>partnerAnimation?.play());
     });
 
     const heroTitle=document.querySelector('.hero h1');
